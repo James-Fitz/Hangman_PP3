@@ -18,17 +18,17 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("hangman")
 
-easy_animals_words = SHEET.worksheet("easy_animals").get_all_values()
-intermediate_animasl_words = SHEET.worksheet("intermediate_animals").get_all_values()
-hard_animals_words = SHEET.worksheet("hard_animals").get_all_values()
+easy_animals_words = SHEET.worksheet("easy_animals").get_values()
+intermediate_animasl_words = SHEET.worksheet("intermediate_animals").get_values()
+hard_animals_words = SHEET.worksheet("hard_animals").get_values()
 
-easy_brands_words = SHEET.worksheet("easy_brands").get_all_values()
-intermediate_brands_words = SHEET.worksheet("intermediate_brands").get_all_values()
-hard_brands_words = SHEET.worksheet("hard_brands").get_all_values()
+easy_brands_words = SHEET.worksheet("easy_brands").get_values()
+intermediate_brands_words = SHEET.worksheet("intermediate_brands").get_values()
+hard_brands_words = SHEET.worksheet("hard_brands").get_values()
 
-easy_countries_words = SHEET.worksheet("easy_countries").get_all_values()
-intermediate_countries_words = SHEET.worksheet("intermediate_countries").get_all_values()
-hard_countries_words = SHEET.worksheet("hard_countries").get_all_values()
+easy_countries_words = SHEET.worksheet("easy_countries").get_values()
+intermediate_countries_words = SHEET.worksheet("intermediate_countries").get_values()
+hard_countries_words = SHEET.worksheet("hard_countries").get_values()
 
 
 """
@@ -41,18 +41,12 @@ def clear():
     os.system('cls' if os.name == 'nt' else 'echo -e \\\\033c')
 
 
-def run_game():
-    category = category_choice()
-    difficulty = difficulty_choice()
-    new_game(category, difficulty)
-    
 
 def new_game(category, difficulty):
     """
     Starts a new game which takes the category and difficulty
     parameters chosen by the user to generate a word from the spreadsheet.
     """
-    random_word = random.choice(f"{difficulty}_{category}_words")
     print(category)
     print(difficulty)
     print(f"your word is: {random_word}")
@@ -132,5 +126,18 @@ def difficulty_choice():
     print(f"You selected { difficulty.capitalize() }\n")
     return difficulty
 
-  
+
+
+category = category_choice()
+difficulty = difficulty_choice()
+
+def random_word(category, difficulty):
+    word = f"{category}_{difficulty}_words"
+    return word
+    print(word)
+    
+    
+random_word(category, difficulty)
+    
+    
 main_menu()
