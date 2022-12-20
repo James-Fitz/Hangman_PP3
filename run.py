@@ -33,7 +33,8 @@ def clear():
     os.system('cls' if os.name == 'nt' else 'echo -e \\\\033c')
 
 
-print(r"""
+def main_menu():
+    print(r"""
   _   _                                                         
  | | | |   __ _   _ __     __ _   _ __ ___     __ _   _ __  
  | |_| |  / _` | | '_ \   / _` | | '_ ` _ \   / _` | | '_ \ 
@@ -42,8 +43,6 @@ print(r"""
                           |___/                            
     """)
 
-
-def main_menu():
     
     print(r"""
              |\|
@@ -85,6 +84,7 @@ while selection != 0:
     if selection == 1:
         clear()
         print("Starting game...")
+        run_game()
         break
         # clears the console and runs the main game
     elif selection == 2:
@@ -99,3 +99,26 @@ while selection != 0:
         print("Invalid choice, try again")
         break
         # will print when an invalid selection is chosen
+        
+        
+def category_choice():
+    print("Please select a category...")
+    print("[1] Animals")
+    print("[2] Brands")
+    print("[3] Countries")
+    
+    return category
+
+
+def difficulty_choice():
+    print("Please select a difficulty level...")
+    print("[1] Easy - 5 letter word")
+    print("[2] Intermediate - 6 letter word")
+    print("[3] Hard - 7 letter word")
+    
+    return difficulty
+
+
+def run_game(category, difficulty):
+    category_choice()
+    difficulty_choice()
