@@ -18,9 +18,11 @@ SHEET = GSPREAD_CLIENT.open("hangman")
 easy_animal_words = SHEET.worksheet("easy_animals").get_all_values()
 intermediate_animal_words = SHEET.worksheet("intermediate_animals").get_all_values()
 hard_animal_words = SHEET.worksheet("hard_animals").get_all_values()
+
 easy_brand_words = SHEET.worksheet("easy_brands").get_all_values()
 intermediate_brand_words = SHEET.worksheet("intermediate_brands").get_all_values()
 hard_brand_words = SHEET.worksheet("hard_brands").get_all_values()
+
 easy_country_words = SHEET.worksheet("easy_countries").get_all_values()
 intermediate_country_words = SHEET.worksheet("intermediate_countries").get_all_values()
 hard_country_words = SHEET.worksheet("hard_countries").get_all_values()
@@ -28,3 +30,11 @@ hard_country_words = SHEET.worksheet("hard_countries").get_all_values()
 print(easy_animal_words)
 print(intermediate_animal_words)
 print(hard_animal_words)
+
+print(easy_brand_words)
+print(intermediate_brand_words)
+print(hard_brand_words)
+
+print(easy_country_words)
+print(intermediate_country_words)
+print(hard_country_words)
