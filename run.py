@@ -47,11 +47,11 @@ def run_game():
     new_game(category, difficulty)
     
 
-"""
-Starts a new game which takes the category and difficulty
-parameters chosen by the user to generate a word from the spreadsheet.
-"""
 def new_game(category, difficulty):
+    """
+    Starts a new game which takes the category and difficulty
+    parameters chosen by the user to generate a word from the spreadsheet.
+    """
     random_word = random.choice(f"{difficulty}_{category}_words")
     print(category)
     print(difficulty)
