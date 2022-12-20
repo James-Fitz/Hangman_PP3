@@ -1,7 +1,7 @@
 # Your code goes here.
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
-import gspread
+import gspread, os
 from google.oauth2.service_account import Credentials
 
 SCOPE = [
@@ -28,16 +28,24 @@ intermediate_country_words = SHEET.worksheet("intermediate_countries").get_all_v
 hard_country_words = SHEET.worksheet("hard_countries").get_all_values()
 
 
-def main_menu():
-    print(r"""\
-                                                               
+def clear():
+    # clears the screen for user
+    os.system('cls' if os.name == 'nt' else 'echo -e \\\\033c')
+
+
+print(r"""
+  _   _                                                         
  | | | |   __ _   _ __     __ _   _ __ ___     __ _   _ __  
  | |_| |  / _` | | '_ \   / _` | | '_ ` _ \   / _` | | '_ \ 
  |  _  | | (_| | | | | | | (_| | | | | | | | | (_| | | | | |
  |_| |_|  \__,_| |_| |_|  \__, | |_| |_| |_|  \__,_| |_| |_|
                           |___/                            
     """)
-    print(r"""\
+
+
+def main_menu():
+    
+    print(r"""
              |\|
              |\|
              |\|
@@ -68,3 +76,26 @@ def main_menu():
     print("[0] Quit")
     
 main_menu()
+
+print("Welcome to Hangman!")
+selection = int(input("Please select a number from the main menu to continue...: \n"))
+
+
+while selection != 0:
+    if selection == 1:
+        clear()
+        print("Starting game...")
+        break
+        # clears the console and runs the main game
+    elif selection == 2:
+        print("Rules for hangman are as follows: (input rules here)")
+        break
+        # print rules for hangman to console
+    elif selection == 3:
+        print("Credits : thank you to ....")
+        break
+        # print thank yous and credits to console
+    else:
+        print("Invalid choice, try again")
+        break
+        # will print when an invalid selection is chosen
