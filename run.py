@@ -1,7 +1,10 @@
 # Your code goes here.
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
-import gspread, os, random
+import gspread
+import os 
+import random
+
 from google.oauth2.service_account import Credentials
 
 SCOPE = [
@@ -28,6 +31,11 @@ intermediate_countries_words = SHEET.worksheet("intermediate_countries").get_all
 hard_countries_words = SHEET.worksheet("hard_countries").get_all_values()
 
 
+"""
+Clears the console for the user.
+"""
+
+
 def clear():
     # clears the screen for user
     os.system('cls' if os.name == 'nt' else 'echo -e \\\\033c')
@@ -36,6 +44,18 @@ def clear():
 def run_game():
     category = category_choice()
     difficulty = difficulty_choice()
+    new_game(category, difficulty)
+    
+
+"""
+Starts a new game which takes the category and difficulty
+parameters chosen by the user to generate a word from the spreadsheet.
+"""
+def new_game(category, difficulty):
+    random_word = random.choice(f"{difficulty}_{category}_words")
+    print(category)
+    print(difficulty)
+    print(f"your word is: {random_word}")
     
     
 def main_menu():
@@ -80,7 +100,7 @@ def main_menu():
     print("[0] Quit")
     
     print("Welcome to Hangman!")
-    selection = int(input("Please select a number from the main menu to continue...: \n"))
+    selection = int(input("Please select a number to continue...: \n"))
 
     while selection != 0:
         if selection == 1:
@@ -109,7 +129,7 @@ def category_choice():
     print("[2] Brands")
     print("[3] Countries")
     
-    selection = int(input("Please select a number from the menu to continue...: \n"))
+    selection = int(input("Please select a number to continue...: \n"))
     
     if selection == 1:
         category = "animals"
@@ -131,7 +151,7 @@ def difficulty_choice():
     print("[2] Intermediate - 6 letter word")
     print("[3] Hard - 7 letter word")
     
-    selection = int(input("Please select a number from the menu to continue...: \n"))
+    selection = int(input("Please select a number to continue...: \n"))
     
     if selection == 1:
         difficulty = "easy"
