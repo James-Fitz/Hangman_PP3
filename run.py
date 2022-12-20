@@ -27,14 +27,44 @@ easy_country_words = SHEET.worksheet("easy_countries").get_all_values()
 intermediate_country_words = SHEET.worksheet("intermediate_countries").get_all_values()
 hard_country_words = SHEET.worksheet("hard_countries").get_all_values()
 
-print(easy_animal_words)
-print(intermediate_animal_words)
-print(hard_animal_words)
 
-print(easy_brand_words)
-print(intermediate_brand_words)
-print(hard_brand_words)
-
-print(easy_country_words)
-print(intermediate_country_words)
-print(hard_country_words)
+def main_menu():
+    print(r"""\
+                                                               
+ | | | |   __ _   _ __     __ _   _ __ ___     __ _   _ __  
+ | |_| |  / _` | | '_ \   / _` | | '_ ` _ \   / _` | | '_ \ 
+ |  _  | | (_| | | | | | | (_| | | | | | | | | (_| | | | | |
+ |_| |_|  \__,_| |_| |_|  \__, | |_| |_| |_|  \__,_| |_| |_|
+                          |___/                            
+    """)
+    print(r"""\
+             |\|
+             |\|
+             |\|
+             |\|
+             |\|
+             |\|
+             |_| 
+            (___)
+            (___)
+            (___)
+            (___)
+            (___)
+            (___)
+          ,(/   \),
+         ('/     \')
+        ('/       \')
+        |/|       |/|
+        |/|       |/|
+        |/|       |/|
+        (-\       /-)
+         \-\     /-/
+          \-\___/-/ 
+           '-----'
+    """)
+    print("[1] Play Game")
+    print("[2] Rules")
+    print("[3] Credits")
+    print("[0] Quit")
+    
+main_menu()
