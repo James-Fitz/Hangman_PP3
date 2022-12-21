@@ -1,8 +1,6 @@
 import gspread
-import os 
+import os
 import random
-
-
 from google.oauth2.service_account import Credentials
 
 SCOPE = [
@@ -24,7 +22,7 @@ def clear():
     os.system('cls' if os.name == 'nt' else 'echo -e \\\\033c')
 
 
-def quit():
+def quit_game():
     clear()
     print("Thanks for playing...")
     print("""
@@ -42,33 +40,30 @@ def quit():
 ░░░░▀▀▀▀▀▀▀▀▀▄░░░▀▀░░░▄▀░▀▀▀▀▀▀▀▀▀░░░░░
 ░░░░░░░░░░░░░▀▄░░░░░░▄▀░░░░░░░░░░░░░░░░
 ░░░░░░░░░░░░░░░▀▀▀▀▀▀░░░░░░░░░░░░░░░░░░
-░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-"""
-)
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░""")
     exit()
-    
+
 
 def sub_menu():
     print("[1] Main menu")
     print("[0] Quit")
-    
     selection = int(input("Please select a number to continue...: \n"))
     if selection == 1:
         clear()
         main_menu()
     elif selection == 0:
         clear()
-        quit()
-        
+        quit_game()
+
 
 def rules():
     print(
         """
         You will be given a choice of 3 categories to choose from.\n
         You will be given a choice of 3 difficulty levels to choose from.\n
-        The object of the game is to guess to mystery word by guessing letters 
+        The object of the game is to guess to mystery word by guessing letters
         from the word.\n
-        Each time you guess a letter incorrectly, another body part of the 
+        Each time you guess a letter incorrectly, another body part of the
         hangman will be drawn.\n
         When the hangman is complete, you lose.\n
         If you can guess the word before the hangman is complete, you win!\n
@@ -77,40 +72,35 @@ def rules():
     sub_menu()
 
 
-def credits():
+def credits_info():
     print(
         """
         This game was created by James Fitzpatrick for the Code Institute
         portfolio project 3.\n
-        
         This game was created using the Python programming language.\n
-        
         Github repository: https://github.com/James-Fitz\n
         LinkedIn: https://www.linkedin.com/in/james-fitzpatrick-6265b8248/\n
-        
         Thank you to my mentor Chris Quinn for all of the fantastic advice
         throughout this project.\n
-        
         """
         )
     sub_menu()
-    
+
 
 def main_menu():
-    
-    print(r"""   
+    print(r"""
                      |/|
                      | |
                      |/|
                      | |
                      |/|
-  _   _             (___)                                           
- | | | | __ _ _ __   __ _ _ __ ___   __ _ _ __  
- | |_| |/ _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ 
+  _   _             (___)
+ | | | | __ _ _ __   __ _ _ __ ___   __ _ _ __
+ | |_| |/ _` | '_ \ / _` | '_ ` _ \ / _` | '_ \
  |  _  | (_| | | | | (_| | | | | | | (_| | | | |
  |_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
-                    |___/ 
-                                          
+                    |___/
+
                     (___)
                     (___)
                     (___)
@@ -127,7 +117,6 @@ def main_menu():
     print("[2] Rules")
     print("[3] Credits")
     print("[0] Quit")
-    
     print("Welcome to Hangman!")
     selection = int(input("Please select a number to continue...: \n"))
 
@@ -144,25 +133,25 @@ def main_menu():
     elif selection == 3:
         clear()
         print("CREDITS")
-        credits()
+        credits_info()
         # print thank you and credits to console
     elif selection == 0:
-        quit()
+        quit_game()
     else:
-        print(f"""{selection} is not a valid choice, 
+        print(f"""{selection} is not a valid choice,
                 please pick a number from the menu""")
         main_menu()
         # will print when an invalid selection is chosen
-    
+
 
 def category_choice():
     print("Please select a category...")
     print("[1] Animals")
     print("[2] Brands")
     print("[3] Countries")
-    
+
     selection = int(input("Please select a number to continue...: \n"))
-    
+
     if selection == 1:
         category = "animals"
     elif selection == 2:
@@ -182,9 +171,9 @@ def difficulty_choice():
     print("[1] Easy - 5 letter word")
     print("[2] Intermediate - 6 letter word")
     print("[3] Hard - 7 letter word")
-    
+
     selection = int(input("Please select a number to continue...: \n"))
-    
+
     if selection == 1:
         difficulty = "easy"
     elif selection == 2:
@@ -203,8 +192,8 @@ def run_game():
     category = category_choice()
     difficulty = difficulty_choice()
     new_game(category, difficulty)
-    
-    
+
+
 def new_game(category, difficulty):
     """
     Starts a new game which takes the category and difficulty
@@ -217,14 +206,14 @@ def new_game(category, difficulty):
     print(f"Difficulty level: { difficulty.capitalize() }")
     print(f"your word is: {random_word}")
     print(len(random_word) * " _ ")
-    
+
     guessed_letters = ""
     wrong_guesses = 0
-    
+
     # Create a loop that ends when the player loses. Break if player wins
     while wrong_guesses < 6:
         player_choice = input("Please pick a letter...: \n")
-        
+
         if player_choice in random_word:
             print(f"Correct, {player_choice} is in the word!")
         else:
@@ -233,16 +222,22 @@ def new_game(category, difficulty):
             wrong_guesses += 1
         # Adds all letters guessed by the user to the guessed_letters variable
         guessed_letters = guessed_letters + player_choice
-        
+        wrong_letters = 0
+
         for letter in random_word:
             if letter in guessed_letters:
                 print(f"{letter}", end="")
             else:
                 print(" _ ", end="")
-    
-    else:
-        print("Sorry, you lose... Please try again...")
-        sub_menu()          
-    
-main_menu()
+                wrong_letters += 1
+                
+        if wrong_letters == 0:
+            print(f"Congratulations, you won! The word is {random_word}!")
+            break
+            sub_menu()
+        else:
+            print("Sorry, you lose... Please try again...")
+            sub_menu()
 
+
+main_menu()
