@@ -141,7 +141,6 @@ def main_menu():
 
     if selection == 1:
         clear()
-        print("Starting game...\n")
         run_game()
         # clears the console and runs the main game
     elif selection == 2:
@@ -194,9 +193,9 @@ def difficulty_choice():
     Return chosen difficulty.
     """
     print("Please select a difficulty level...\n")
-    print("[1] Easy - 5 letter word")
-    print("[2] Intermediate - 6 letter word")
-    print("[3] Hard - 7 letter word\n")
+    print("[1] Easy:".ljust(20, " ") + " 5 letter word")
+    print("[2] Intermediate:".ljust(20, " ") + " 6 letter word")
+    print("[3] Hard:".ljust(20, " ") + " 7 letter word\n")
 
     selection = int(input("Please select a number to continue...: \n"))
 
