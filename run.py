@@ -22,6 +22,34 @@ def clear():
     """
     os.system('cls' if os.name == 'nt' else 'echo -e \\\\033c')
 
+
+def rules():
+    print(
+        """
+        You will be given a choice of 3 categories to choose from.\n
+        You will be given a choice of 3 difficulty levels to choose from.\n
+        The object of the game is to guess to mystery word by guessing letters from the word.\n
+        Each time you guess a letter incorrectly, another body part of the hangman will be drawn.\n
+        When the hangman is complete, you lose.
+        If you can guess the word before the hangman is complete, you win!
+        """"
+    )
+    print("[1] Main menu")
+    print("[0] Quit")
+    
+    selection = int(input("Please select a number to continue...: \n"))
+    if selection == 1:
+        clear()
+        main_menu()
+    elif selection == 0:
+        clear()
+        print("Thanks for playing...")
+        quit()
+    else:
+        print("Invalid choice, try again")
+        rules()
+    
+    
     
 def main_menu():
 
@@ -42,7 +70,8 @@ def main_menu():
             # clears the console and runs the main game
         elif selection == 2:
             print("Rules for hangman are as follows: (input rules here)")
-            break
+            rules()
+            
             # print rules for hangman to console
         elif selection == 3:
             print("Credits : thank you to ....")
