@@ -46,8 +46,10 @@ def rules():
         """
         You will be given a choice of 3 categories to choose from.\n
         You will be given a choice of 3 difficulty levels to choose from.\n
-        The object of the game is to guess to mystery word by guessing letters from the word.\n
-        Each time you guess a letter incorrectly, another body part of the hangman will be drawn.\n
+        The object of the game is to guess to mystery word by guessing letters 
+        from the word.\n
+        Each time you guess a letter incorrectly, another body part of the 
+        hangman will be drawn.\n
         When the hangman is complete, you lose.\n
         If you can guess the word before the hangman is complete, you win!\n
         """
@@ -143,8 +145,6 @@ def difficulty_choice():
     clear()
     print(f"You selected { difficulty.capitalize() }\n")
     return difficulty
-
-
 
 
 def run_game():
