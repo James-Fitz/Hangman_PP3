@@ -168,7 +168,6 @@ def category_choice():
         print("Invalid choice, try again")
         category_choice()
     clear()
-    print(f"You selected { category.capitalize() }\n")
     return category
 
 
@@ -190,7 +189,6 @@ def difficulty_choice():
         print("Invalid choice, try again")
         difficulty_choice()
     clear()
-    print(f"You selected { difficulty.capitalize() }\n")
     return difficulty
 
 
