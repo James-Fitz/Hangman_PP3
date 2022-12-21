@@ -23,6 +23,11 @@ def clear():
     os.system('cls' if os.name == 'nt' else 'echo -e \\\\033c')
 
 
+def quit():
+    print("Thanks for playing...Goodbye!")
+    exit()
+    
+
 def sub_menu():
     print("[1] Main menu")
     print("[0] Quit")
@@ -33,7 +38,6 @@ def sub_menu():
         main_menu()
     elif selection == 0:
         clear()
-        print("Thanks for playing...")
         quit()
         
 
@@ -82,17 +86,18 @@ def main_menu():
             break
             # clears the console and runs the main game
         elif selection == 2:
-            print("Rules for hangman are as follows:\n")
+            clear()
+            print("RULES")
             rules()
-            
             # print rules for hangman to console
         elif selection == 3:
-            print("Credits : thank you to ....")
-            break
+            clear()
+            print("CREDITS")
+            credits()
             # print thank yous and credits to console
         else:
-            print("Invalid choice, try again")
-            break
+            print(f"{selection} is not a valid choice, please pick a number from the menu")
+            main_menu()
             # will print when an invalid selection is chosen
     
 
@@ -113,7 +118,7 @@ def category_choice():
     else:
         print("Invalid choice, try again")
         category_choice()
-    
+    clear()
     print(f"You selected { category.capitalize() }\n")
     return category
 
@@ -135,7 +140,7 @@ def difficulty_choice():
     else:
         print("Invalid choice, try again")
         difficulty_choice()
-    
+    clear()
     print(f"You selected { difficulty.capitalize() }\n")
     return difficulty
 
@@ -152,10 +157,9 @@ def new_game(category, difficulty):
     parameters chosen by the user to generate a word from the spreadsheet.
     """
     random_word = random.choice(SHEET.worksheet(difficulty + "_" + category).get_values().pop())
-    print(category)
-    print(difficulty)
+    print(f"Category: { category.capitalize() }")
+    print(f"Difficulty level: { difficulty.capitalize() }")
     print(f"your word is: {random_word}")
     
-
+    
 main_menu()
-
