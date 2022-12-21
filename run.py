@@ -105,7 +105,8 @@ def main_menu():
             credits()
             # print thank yous and credits to console
         else:
-            print(f"{selection} is not a valid choice, please pick a number from the menu")
+            print(f"""{selection} is not a valid choice, 
+                  please pick a number from the menu""")
             main_menu()
             # will print when an invalid selection is chosen
     
@@ -165,10 +166,35 @@ def new_game(category, difficulty):
     Starts a new game which takes the category and difficulty
     parameters chosen by the user to generate a word from the spreadsheet.
     """
+    # Generate the word the player is trying to guess
     random_word = random.choice(SHEET.worksheet(difficulty + "_" + category).get_values().pop())
+    # Print the category and difficulty level chosen by the user
     print(f"Category: { category.capitalize() }")
     print(f"Difficulty level: { difficulty.capitalize() }")
     print(f"your word is: {random_word}")
     
+    guessed_letters = ""
+    wrong_guesses = 0
+    
+    # Create a loop that ends when the player loses. Break if player wins
+    while wrong_guesses < 6:
+        player_choice = input("Please pick a letter...: \n")
+        
+        if player_choice in random_word:
+            print(f"Correct, {player_choice} is in the word!")
+        else:
+            print(f"Sorry, {player_choice} is not in the word... You have {5 - wrong_guesses} guesses remaining")
+            # Add 1 to the wrong_guesses variable
+            wrong_guesses += 1
+        print("Guess again!")
+        # Adds all letters guessed by the user to the guessed_letters variable
+        guessed_letters = guessed_letters + player_choice
+        
+        for letter in random_word:
+            if letter in guessed_letters:
+                print(f"{letter}", end="")
+            else:
+                print("_", end="")
+                   
     
 main_menu()
