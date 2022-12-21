@@ -52,7 +52,7 @@ def sub_menu():
     Sub menu to be called containing main menu and quit options for user.
     """
     print("[1] Main menu")
-    print("[0] Quit")
+    print("[0] Quit\n")
     selection = int(input("Please select a number to continue...: \n"))
     if selection == 1:
         clear()
@@ -216,8 +216,8 @@ def print_hangman(wrong_guesses):
     """
     if wrong_guesses == 0:
         print(r"""
-        _________
-        |	 |
+        ______
+        |    |
         |
         |
         |
@@ -226,8 +226,8 @@ def print_hangman(wrong_guesses):
         """)
     elif wrong_guesses == 1:
         print(r"""
-        _________
-        |	 |
+        ______
+        |    |
         |    O
         |
         |
@@ -236,8 +236,8 @@ def print_hangman(wrong_guesses):
         """)
     elif wrong_guesses == 2:
         print(r"""
-        _________
-        |	 |
+        ______
+        |    |
         |    O
         |    |
         |
@@ -246,8 +246,8 @@ def print_hangman(wrong_guesses):
         """)
     elif wrong_guesses == 3:
         print(r"""
-        _________
-        |	 |
+        ______
+        |    |
         |    O
         |    |/
         |
@@ -256,8 +256,8 @@ def print_hangman(wrong_guesses):
         """)
     elif wrong_guesses == 4:
         print(r"""
-        _________
-        |	 |
+        ______
+        |    |
         |    O
         |   \|/
         |
@@ -266,8 +266,8 @@ def print_hangman(wrong_guesses):
         """)
     elif wrong_guesses == 5:
         print(r"""
-        _________
-        |	 |
+        ______
+        |    |
         |    O
         |   \|/
         |    |
@@ -276,8 +276,8 @@ def print_hangman(wrong_guesses):
         """)
     elif wrong_guesses == 6:
         print(r"""
-         _________
-        |	 |
+        ______
+        |    |
         |    O
         |   \|/
         |    |
@@ -286,8 +286,8 @@ def print_hangman(wrong_guesses):
         """)
     elif wrong_guesses == 7:
         print(r"""
-        _________
-        |	 |
+        ______
+        |    |
         |    O
         |   \|/
         |    |
@@ -332,6 +332,7 @@ def new_game(category, difficulty):
             print(f"Sorry, {player_choice} is not in the word... You have {6 - wrong_guesses} guesses remaining")
             # Add 1 to the wrong_guesses variable
             wrong_guesses += 1
+        print_hangman(wrong_guesses)
         # Adds all letters guessed by the user to the guessed_letters variable
         guessed_letters = guessed_letters + player_choice
         wrong_letters = 0
@@ -341,14 +342,15 @@ def new_game(category, difficulty):
                 print(f"{letter}", end="")
             else:
                 print(" _ ", end="")
-                wrong_letters += 1
+                wrong_letters += 1           
         if wrong_letters == 0:
             print(f"Congratulations, you won! The word is {random_word}!")
             sub_menu()
             break
-        else:
-            print("Sorry, you lose... Please try again...")
-            sub_menu()
+    else:
+        print("Sorry, you lose... Please try again...\n")
+        print(f"The word was {random_word}...\n")
+        sub_menu()
 
 
 main_menu()
