@@ -1,6 +1,6 @@
-import gspread
-import os
 import random
+import os
+import gspread
 from google.oauth2.service_account import Credentials
 
 SCOPE = [
@@ -23,6 +23,9 @@ def clear():
 
 
 def quit_game():
+    """
+    Quit the game and print a thank you message and ascii art to the console
+    """
     clear()
     print("Thanks for playing...")
     print("""
@@ -45,6 +48,9 @@ def quit_game():
 
 
 def sub_menu():
+    """
+    Sub menu to be called containing main menu and quit options for user
+    """
     print("[1] Main menu")
     print("[0] Quit")
     selection = int(input("Please select a number to continue...: \n"))
@@ -230,11 +236,11 @@ def new_game(category, difficulty):
             else:
                 print(" _ ", end="")
                 wrong_letters += 1
-                
+
         if wrong_letters == 0:
             print(f"Congratulations, you won! The word is {random_word}!")
-            break
             sub_menu()
+            break
         else:
             print("Sorry, you lose... Please try again...")
             sub_menu()
