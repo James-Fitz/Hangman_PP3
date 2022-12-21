@@ -145,6 +145,8 @@ def difficulty_choice():
     return difficulty
 
 
+
+
 def run_game():
     category = category_choice()
     difficulty = difficulty_choice()
