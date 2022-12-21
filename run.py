@@ -1,3 +1,6 @@
+"""
+Import all neccessary functions
+"""
 import random
 import os
 import gspread
@@ -129,16 +132,16 @@ def main_menu():
                    \\___//
                     -----
                     """)
+    print("Welcome to Hangman!\n")
     print("[1] Play Game")
     print("[2] Rules")
     print("[3] Credits")
-    print("[0] Quit")
-    print("Welcome to Hangman!")
+    print("[0] Quit\n")
     selection = int(input("Please select a number to continue...: \n"))
 
     if selection == 1:
         clear()
-        print("Starting game...")
+        print("Starting game...\n")
         run_game()
         # clears the console and runs the main game
     elif selection == 2:
@@ -165,10 +168,10 @@ def category_choice():
     Print categories for user to choose from.
     Return chosen category.
     """
-    print("Please select a category...")
+    print("Please select a category...\n")
     print("[1] Animals")
     print("[2] Brands")
-    print("[3] Countries")
+    print("[3] Countries\n")
 
     selection = int(input("Please select a number to continue...: \n"))
 
@@ -190,10 +193,10 @@ def difficulty_choice():
     Print difficulties for user to choose from.
     Return chosen difficulty.
     """
-    print("Please select a difficulty level...")
+    print("Please select a difficulty level...\n")
     print("[1] Easy - 5 letter word")
     print("[2] Intermediate - 6 letter word")
-    print("[3] Hard - 7 letter word")
+    print("[3] Hard - 7 letter word\n")
 
     selection = int(input("Please select a number to continue...: \n"))
 
@@ -321,7 +324,7 @@ def new_game(category, difficulty):
 
     guessed_letters = ""
     wrong_guesses = 0
-
+    print_hangman(wrong_guesses)
     # Create a loop that ends when the player loses. Break if player wins.
     while wrong_guesses < 7:
         player_choice = input("Please pick a letter...: \n")
@@ -336,15 +339,16 @@ def new_game(category, difficulty):
         # Adds all letters guessed by the user to the guessed_letters variable
         guessed_letters = guessed_letters + player_choice
         wrong_letters = 0
+        print(f"You have already guessed the following letters\n { list(guessed_letters.upper()) }\n")
 
         for letter in random_word:
             if letter in guessed_letters:
-                print(f"{letter}", end="")
+                print(f" { letter.upper() } ", end="")
             else:
                 print(" _ ", end="")
-                wrong_letters += 1           
+                wrong_letters += 1
         if wrong_letters == 0:
-            print(f"Congratulations, you won! The word is {random_word}!")
+            print(f"Congratulations, you won! The word is {random_word}!\n")
             sub_menu()
             break
     else:
