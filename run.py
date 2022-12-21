@@ -69,6 +69,7 @@ def rules():
     """
     Print rules of game and run sub menu function.
     """
+    print("RULES".center(75))
     print(
         """
         You will be given a choice of 3 categories to choose from.\n
@@ -88,6 +89,7 @@ def credits_info():
     """
     Print credits info and run sub menu function.
     """
+    print("CREDITS".center(75))
     print(
         """
         This game was created by James Fitzpatrick for the Code Institute
@@ -132,11 +134,11 @@ def main_menu():
                    \\___//
                     -----
                     """)
-    print("Welcome to Hangman!\n")
-    print("[1] Play Game")
-    print("[2] Rules")
-    print("[3] Credits")
-    print("[0] Quit\n")
+    print("Welcome to Hangman!\n".center(48))
+    print("[1]".rjust(20, " ") + " Play Game")
+    print("[2]".rjust(20, " ") + " Rules")
+    print("[3]".rjust(20, " ") + " Credits")
+    print("[0]".rjust(20, " ") + " Quit\n")
     selection = int(input("Please select a number to continue...: \n"))
 
     if selection == 1:
@@ -145,12 +147,10 @@ def main_menu():
         # clears the console and runs the main game
     elif selection == 2:
         clear()
-        print("RULES")
         rules()
         # print rules for hangman to console
     elif selection == 3:
         clear()
-        print("CREDITS")
         credits_info()
         # print thank you and credits to console
     elif selection == 0:
@@ -167,10 +167,10 @@ def category_choice():
     Print categories for user to choose from.
     Return chosen category.
     """
-    print("Please select a category...\n")
-    print("[1] Animals")
-    print("[2] Brands")
-    print("[3] Countries\n")
+    print("Please select a category...\n".center(48))
+    print("[1]".rjust(20, " ") + " Animals")
+    print("[2]".rjust(20, " ") + " Brands")
+    print("[3]".rjust(20, " ") + " Countries\n")
 
     selection = int(input("Please select a number to continue...: \n"))
 
@@ -192,10 +192,10 @@ def difficulty_choice():
     Print difficulties for user to choose from.
     Return chosen difficulty.
     """
-    print("Please select a difficulty level...\n")
-    print("[1] Easy:".ljust(20, " ") + " 5 letter word")
-    print("[2] Intermediate:".ljust(20, " ") + " 6 letter word")
-    print("[3] Hard:".ljust(20, " ") + " 7 letter word\n")
+    print("Please select a difficulty level...\n".center(48))
+    print("[1]".rjust(10, " ") + " Easy:".ljust(20, " ") + " 5 letter word")
+    print("[2]".rjust(10, " ") + " Intermediate:".ljust(20, " ") + " 6 letter word")
+    print("[3]".rjust(10, " ") + " Hard:".ljust(20, " ") + " 7 letter word\n")
 
     selection = int(input("Please select a number to continue...: \n"))
 
