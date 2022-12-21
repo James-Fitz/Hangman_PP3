@@ -60,10 +60,16 @@ def rules():
 def credits():
     print(
         """
-        This game was created by James Fitzpatrick for the Code Institute portfolio project 3.\n
+        This game was created by James Fitzpatrick for the Code Institute
+        portfolio project 3.\n
+        
+        This game was created using the Python programming language.\n
+        
         Github repository: https://github.com/James-Fitz\n
         LinkedIn: https://www.linkedin.com/in/james-fitzpatrick-6265b8248/\n
-        Thank you to my mentor Chris Quinn for all of the fantastic advice throughout this project.\n
+        
+        Thank you to my mentor Chris Quinn for all of the fantastic advice
+        throughout this project.\n
         
         """
         )
