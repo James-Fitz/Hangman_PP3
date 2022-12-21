@@ -25,7 +25,26 @@ def clear():
 
 
 def quit():
-    print("Thanks for playing...Goodbye!")
+    clear()
+    print("Thanks for playing...")
+    print("""
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+░░░▄▄▀▀▀▀▀▄░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+░░▄▀░░░░░░░▀▄░░░░░░░░░░░░░░░░░░░░░░░░░░
+░▄▀░░░▄▄░░░░▀▀▀▀▀▀▀▄▄▀▀▀▀▀▀▀▀▀▀▀▀▄▄░░░░
+░█░░░░██░░░░░░░░░░░░░░░░░░░░░░░░░░░▀▄░░
+░█░░░░██▄████▄░██▄░░░░▄██░▄████▄░░░░▀▄░
+░█░░░░██▀░░▀██▄░██▄░░██▀░██▀░▄██░░░░░█░
+░█░░░░██░░░░███░░█████▀░░██▄█▀▀░░░░░░█░
+░█░░░░███▄▄███▀░░░▀██▀░░░▀██▄▄▄██░░░░█░
+░▀▄░░░░▀▀▀▀▀▀░░░░░██▀░░░░░░▀▀▀▀▀░░░░░█░
+░░▀▄░░░░░░░░░░░░░██▀░░░▄▄░░░░░░░░░▄▄▀░░
+░░░░▀▀▀▀▀▀▀▀▀▄░░░▀▀░░░▄▀░▀▀▀▀▀▀▀▀▀░░░░░
+░░░░░░░░░░░░░▀▄░░░░░░▄▀░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░▀▀▀▀▀▀░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+"""
+)
     exit()
     
 
@@ -78,7 +97,32 @@ def credits():
     
 
 def main_menu():
-
+    
+    print(r"""   
+                     |/|
+                     | |
+                     |/|
+                     | |
+                     |/|
+  _   _             (___)                                           
+ | | | | __ _ _ __   __ _ _ __ ___   __ _ _ __  
+ | |_| |/ _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ 
+ |  _  | (_| | | | | (_| | | | | | | (_| | | | |
+ |_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
+                    |___/ 
+                                          
+                    (___)
+                    (___)
+                    (___)
+                    (___)
+                    // \\
+                   //   \\
+                  ||     ||
+                  ||     ||
+                  ||     ||
+                   \\___//
+                    -----
+                    """)
     print("[1] Play Game")
     print("[2] Rules")
     print("[3] Credits")
@@ -87,28 +131,28 @@ def main_menu():
     print("Welcome to Hangman!")
     selection = int(input("Please select a number to continue...: \n"))
 
-    while selection != 0:
-        if selection == 1:
-            clear()
-            print("Starting game...")
-            run_game()
-            break
-            # clears the console and runs the main game
-        elif selection == 2:
-            clear()
-            print("RULES")
-            rules()
-            # print rules for hangman to console
-        elif selection == 3:
-            clear()
-            print("CREDITS")
-            credits()
-            # print thank yous and credits to console
-        else:
-            print(f"""{selection} is not a valid choice, 
-                  please pick a number from the menu""")
-            main_menu()
-            # will print when an invalid selection is chosen
+    if selection == 1:
+        clear()
+        print("Starting game...")
+        run_game()
+        # clears the console and runs the main game
+    elif selection == 2:
+        clear()
+        print("RULES")
+        rules()
+        # print rules for hangman to console
+    elif selection == 3:
+        clear()
+        print("CREDITS")
+        credits()
+        # print thank you and credits to console
+    elif selection == 0:
+        quit()
+    else:
+        print(f"""{selection} is not a valid choice, 
+                please pick a number from the menu""")
+        main_menu()
+        # will print when an invalid selection is chosen
     
 
 def category_choice():
@@ -172,6 +216,7 @@ def new_game(category, difficulty):
     print(f"Category: { category.capitalize() }")
     print(f"Difficulty level: { difficulty.capitalize() }")
     print(f"your word is: {random_word}")
+    print(len(random_word) * " _ ")
     
     guessed_letters = ""
     wrong_guesses = 0
@@ -186,7 +231,6 @@ def new_game(category, difficulty):
             print(f"Sorry, {player_choice} is not in the word... You have {5 - wrong_guesses} guesses remaining")
             # Add 1 to the wrong_guesses variable
             wrong_guesses += 1
-        print("Guess again!")
         # Adds all letters guessed by the user to the guessed_letters variable
         guessed_letters = guessed_letters + player_choice
         
@@ -194,7 +238,11 @@ def new_game(category, difficulty):
             if letter in guessed_letters:
                 print(f"{letter}", end="")
             else:
-                print("_", end="")
-                   
+                print(" _ ", end="")
+    
+    else:
+        print("Sorry, you lose... Please try again...")
+        sub_menu()          
     
 main_menu()
+
