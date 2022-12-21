@@ -49,7 +49,7 @@ def quit_game():
 
 def sub_menu():
     """
-    Sub menu to be called containing main menu and quit options for user
+    Sub menu to be called containing main menu and quit options for user.
     """
     print("[1] Main menu")
     print("[0] Quit")
@@ -63,6 +63,9 @@ def sub_menu():
 
 
 def rules():
+    """
+    Print rules of game and run sub menu function.
+    """
     print(
         """
         You will be given a choice of 3 categories to choose from.\n
@@ -79,6 +82,9 @@ def rules():
 
 
 def credits_info():
+    """
+    Print credits info and run sub menu function.
+    """
     print(
         """
         This game was created by James Fitzpatrick for the Code Institute
@@ -94,6 +100,10 @@ def credits_info():
 
 
 def main_menu():
+    """
+    Print options for main menu to console.
+    Run the appropriate function when user makes choice.
+    """
     print(r"""
                      |/|
                      | |
@@ -151,6 +161,10 @@ def main_menu():
 
 
 def category_choice():
+    """
+    Print categories for user to choose from.
+    Return chosen category.
+    """
     print("Please select a category...")
     print("[1] Animals")
     print("[2] Brands")
@@ -172,6 +186,10 @@ def category_choice():
 
 
 def difficulty_choice():
+    """
+    Print difficulties for user to choose from.
+    Return chosen difficulty.
+    """
     print("Please select a difficulty level...")
     print("[1] Easy - 5 letter word")
     print("[2] Intermediate - 6 letter word")
@@ -192,7 +210,97 @@ def difficulty_choice():
     return difficulty
 
 
+def print_hangman(wrong_guesses):
+    """
+    Takes the value of wrong guesses and prints the relevant hangman image
+    """
+    if wrong_guesses == 0:
+        print("""
+              _________
+            |	 |
+			|
+			|
+			|
+			|
+			|________
+        """)
+    elif wrong_guesses == 1:
+        print(""" 
+              _________
+			|	 |
+			|    O
+			|
+			|
+			|
+			|________
+        """)
+    elif wrong_guesses == 2:
+        print(""" 
+              _________
+			|	 |
+			|    O
+			|    |
+			|
+			|
+			|________
+        """)
+    elif wrong_guesses == 3:
+        print(""" 
+              _________
+			|	 |
+			|    O
+			|    |/
+			|
+			|
+			|________
+        """)
+    elif wrong_guesses == 4:
+        print(""" 
+              _________
+			|	 |
+			|    O
+			|   \|/
+			|    
+			|   
+			|________
+        """)
+    elif wrong_guesses == 5:
+        print(""" 
+              _________
+			|	 |
+			|    O
+			|   \|/
+			|    |
+			|
+			|________
+        """)    
+    elif wrong_guesses == 6:
+        print(""" 
+              _________
+			|	 |
+			|    O
+			|   \|/
+			|    |
+			|     \
+			|________
+        """)    
+    elif wrong_guesses == 7:
+        print(""" 
+              _________
+			|	 |
+			|    O
+			|   \|/
+			|    |
+			|   / \
+			|________
+        """)    
+
+
 def run_game():
+    """
+    Assign variables for category and difficulty. 
+    Use these variables to run new_game function.
+    """
     category = category_choice()
     difficulty = difficulty_choice()
     new_game(category, difficulty)
@@ -214,14 +322,14 @@ def new_game(category, difficulty):
     guessed_letters = ""
     wrong_guesses = 0
 
-    # Create a loop that ends when the player loses. Break if player wins
-    while wrong_guesses < 6:
+    # Create a loop that ends when the player loses. Break if player wins.
+    while wrong_guesses < 7:
         player_choice = input("Please pick a letter...: \n")
 
         if player_choice in random_word:
             print(f"Correct, {player_choice} is in the word!")
         else:
-            print(f"Sorry, {player_choice} is not in the word... You have {5 - wrong_guesses} guesses remaining")
+            print(f"Sorry, {player_choice} is not in the word... You have {6 - wrong_guesses} guesses remaining")
             # Add 1 to the wrong_guesses variable
             wrong_guesses += 1
         # Adds all letters guessed by the user to the guessed_letters variable
@@ -234,7 +342,7 @@ def new_game(category, difficulty):
             else:
                 print(" _ ", end="")
                 wrong_letters += 1
-
+                
         if wrong_letters == 0:
             print(f"Congratulations, you won! The word is {random_word}!")
             sub_menu()
