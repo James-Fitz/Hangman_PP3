@@ -2,6 +2,9 @@ import gspread
 import os 
 import random
 
+#Import the tkinter library
+from tkinter import *
+
 from google.oauth2.service_account import Credentials
 
 SCOPE = [
@@ -14,6 +17,16 @@ CREDS = Credentials.from_service_account_file("creds.json")
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("hangman")
+
+#Create an instance of tkinter frame
+win = Tk()
+
+#Set the geometry
+win.geometry("600x250")
+
+win.eval('tk::PlaceWindow . center')
+
+win.mainloop()
 
 
 def clear():
