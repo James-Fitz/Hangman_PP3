@@ -23,17 +23,7 @@ def clear():
     os.system('cls' if os.name == 'nt' else 'echo -e \\\\033c')
 
 
-def rules():
-    print(
-        """
-        You will be given a choice of 3 categories to choose from.\n
-        You will be given a choice of 3 difficulty levels to choose from.\n
-        The object of the game is to guess to mystery word by guessing letters from the word.\n
-        Each time you guess a letter incorrectly, another body part of the hangman will be drawn.\n
-        When the hangman is complete, you lose.
-        If you can guess the word before the hangman is complete, you win!
-        """"
-    )
+def sub_menu():
     print("[1] Main menu")
     print("[0] Quit")
     
@@ -45,12 +35,35 @@ def rules():
         clear()
         print("Thanks for playing...")
         quit()
-    else:
-        print("Invalid choice, try again")
-        rules()
+        
+
+def rules():
+    print(
+        """
+        You will be given a choice of 3 categories to choose from.\n
+        You will be given a choice of 3 difficulty levels to choose from.\n
+        The object of the game is to guess to mystery word by guessing letters from the word.\n
+        Each time you guess a letter incorrectly, another body part of the hangman will be drawn.\n
+        When the hangman is complete, you lose.\n
+        If you can guess the word before the hangman is complete, you win!\n
+        """
+    )
+    sub_menu()
+
+
+def credits():
+    print(
+        """
+        This game was created by James Fitzpatrick for the Code Institute portfolio project 3.\n
+        Github repository: https://github.com/James-Fitz\n
+        LinkedIn: https://www.linkedin.com/in/james-fitzpatrick-6265b8248/\n
+        Thank you to my mentor Chris Quinn for all of the fantastic advice throughout this project.\n
+        
+        """
+        )
+    sub_menu()
     
-    
-    
+
 def main_menu():
 
     print("[1] Play Game")
@@ -69,7 +82,7 @@ def main_menu():
             break
             # clears the console and runs the main game
         elif selection == 2:
-            print("Rules for hangman are as follows: (input rules here)")
+            print("Rules for hangman are as follows:\n")
             rules()
             
             # print rules for hangman to console
@@ -125,6 +138,7 @@ def difficulty_choice():
     
     print(f"You selected { difficulty.capitalize() }\n")
     return difficulty
+
 
 def run_game():
     category = category_choice()
