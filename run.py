@@ -297,6 +297,8 @@ def print_hangman(wrong_guesses):
         |   / \
         |________
         """)
+    else:
+        quit()
 
 
 def run_game():
