@@ -168,9 +168,9 @@ def category_choice():
     Return chosen category.
     """
     print("Please select a category...\n".center(48))
-    print("[1]".rjust(20, " ") + " Animals")
-    print("[2]".rjust(20, " ") + " Brands")
-    print("[3]".rjust(20, " ") + " Countries\n")
+    print("[1]".rjust(15, " ") + " Animals")
+    print("[2]".rjust(15, " ") + " Brands")
+    print("[3]".rjust(15, " ") + " Countries\n")
 
     selection = int(input("Please select a number to continue...: \n"))
 
@@ -193,9 +193,9 @@ def difficulty_choice():
     Return chosen difficulty.
     """
     print("Please select a difficulty level...\n".center(48))
-    print("[1]".rjust(10, " ") + " Easy:".ljust(20, " ") + " 5 letter word")
-    print("[2]".rjust(10, " ") + " Intermediate:".ljust(20, " ") + " 6 letter word")
-    print("[3]".rjust(10, " ") + " Hard:".ljust(20, " ") + " 7 letter word\n")
+    print("[1]".rjust(10, " ") + " Easy:".ljust(15, " ") + " 5 letter word")
+    print("[2]".rjust(10, " ") + " Intermediate:".ljust(15, " ") + " 6 letter word")
+    print("[3]".rjust(10, " ") + " Hard:".ljust(15, " ") + " 7 letter word\n")
 
     selection = int(input("Please select a number to continue...: \n"))
 
@@ -340,7 +340,7 @@ def new_game(category, difficulty):
         # Adds all letters guessed by the user to the guessed_letters variable
         guessed_letters = guessed_letters + player_choice
         wrong_letters = 0
-        print(f"You have already guessed the following letters\n { list(guessed_letters.upper()) }\n")
+        print(f"Previously guessed letters: \n { list(guessed_letters.upper()) }\n")
 
         for letter in random_word:
             if letter in guessed_letters:
