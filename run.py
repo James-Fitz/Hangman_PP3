@@ -215,90 +215,90 @@ def print_hangman(wrong_guesses):
     Takes the value of wrong guesses and prints the relevant hangman image
     """
     if wrong_guesses == 0:
-        print("""
-              _________
-            |	 |
-			|
-			|
-			|
-			|
-			|________
+        print(r"""
+        _________
+        |	 |
+        |
+        |
+        |
+        |
+        |________
         """)
     elif wrong_guesses == 1:
-        print(""" 
-              _________
-			|	 |
-			|    O
-			|
-			|
-			|
-			|________
+        print(r"""
+        _________
+        |	 |
+        |    O
+        |
+        |
+        |
+        |________
         """)
     elif wrong_guesses == 2:
-        print(""" 
-              _________
-			|	 |
-			|    O
-			|    |
-			|
-			|
-			|________
+        print(r"""
+        _________
+        |	 |
+        |    O
+        |    |
+        |
+        |
+        |________
         """)
     elif wrong_guesses == 3:
-        print(""" 
-              _________
-			|	 |
-			|    O
-			|    |/
-			|
-			|
-			|________
+        print(r"""
+        _________
+        |	 |
+        |    O
+        |    |/
+        |
+        |
+        |________
         """)
     elif wrong_guesses == 4:
-        print(""" 
-              _________
-			|	 |
-			|    O
-			|   \|/
-			|    
-			|   
-			|________
+        print(r"""
+        _________
+        |	 |
+        |    O
+        |   \|/
+        |
+        |
+        |________
         """)
     elif wrong_guesses == 5:
-        print(""" 
-              _________
-			|	 |
-			|    O
-			|   \|/
-			|    |
-			|
-			|________
-        """)    
+        print(r"""
+        _________
+        |	 |
+        |    O
+        |   \|/
+        |    |
+        |
+        |________
+        """)
     elif wrong_guesses == 6:
-        print(""" 
-              _________
-			|	 |
-			|    O
-			|   \|/
-			|    |
-			|     \
-			|________
-        """)    
+        print(r"""
+         _________
+        |	 |
+        |    O
+        |   \|/
+        |    |
+        |     \
+        |________
+        """)
     elif wrong_guesses == 7:
-        print(""" 
-              _________
-			|	 |
-			|    O
-			|   \|/
-			|    |
-			|   / \
-			|________
-        """)    
+        print(r"""
+        _________
+        |	 |
+        |    O
+        |   \|/
+        |    |
+        |   / \
+        |________
+        """)
 
 
 def run_game():
     """
-    Assign variables for category and difficulty. 
+    Assign variables for category and difficulty.
     Use these variables to run new_game function.
     """
     category = category_choice()
@@ -342,7 +342,6 @@ def new_game(category, difficulty):
             else:
                 print(" _ ", end="")
                 wrong_letters += 1
-                
         if wrong_letters == 0:
             print(f"Congratulations, you won! The word is {random_word}!")
             sub_menu()
