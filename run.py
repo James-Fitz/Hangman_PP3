@@ -331,47 +331,52 @@ def new_game(category, difficulty):
     # Create a loop that ends when the player loses. Break if player wins.
     while wrong_guesses < 7:
         player_choice = input("Please pick a letter...: \n")
-        clear()
         print(f"Category: { category.capitalize() }")
         print(f"Difficulty level: { difficulty.capitalize() } \n")
-        if player_choice.isalpha() and len(player_choice) == 1:
-            if player_choice in guessed_letters:
-                print(
-                    f"Sorry, {player_choice.upper()} has already been guessed..." +
-                    f"You have {6 - wrong_guesses} guesses remaining")
-                print_hangman(wrong_guesses)
-                print(f"\n Previously guessed letters: \n { list(guessed_letters.upper()) }\n")
-            else:
-                if player_choice in random_word:
-                    print(
-                        f"Correct, {player_choice.upper()} is in the word!" +
-                        f"You have {6 - wrong_guesses} guesses remaining")
-                else:
-                    print(
-                        f"Sorry, {player_choice.upper()} is not in the word..." +
-                        f"You have {6 - wrong_guesses} guesses remaining"
-                        )
-                    # Add 1 to the wrong_guesses variable
-                    wrong_guesses += 1
-                print_hangman(wrong_guesses)
-                # Adds all letters guessed by the user to the guessed_letters variable
-                guessed_letters = guessed_letters + player_choice
-                wrong_letters = 0
-                for letter in random_word:
-                    if letter in guessed_letters:
-                        print(f" { letter.upper() } ", end="")
-                    else:
-                        print(" _ ", end="")
-                        wrong_letters += 1
-                print(f"\n Previously guessed letters: \n { list(guessed_letters.upper()) }\n")
-                if wrong_letters == 0:
-                    print(f"\n Congratulations, you won! The word is {random_word.upper()}!\n")
-                    sub_menu()
-                    break
-        else:
-            print(f"Error: {player_choice} is not a valid choice...")
+        print_hangman(wrong_guesses)
+        clear()
+        if not player_choice.isalpha():
+            print(f"{player_choice} is not a valid letter...\n")
             print_hangman(wrong_guesses)
             print(f"\n Previously guessed letters: \n { list(guessed_letters.upper()) }\n")
+            print(f"You have {6 - wrong_guesses} guess(es) remaining...")
+        elif len(player_choice) != 1:
+            print("Please input one letter at a time...\n")
+            print_hangman(wrong_guesses)
+            print(f"\n Previously guessed letters: \n { list(guessed_letters.upper()) }\n")
+            print(f"You have {6 - wrong_guesses} guess(es) remaining...")
+        elif player_choice in guessed_letters:
+            print(f"{player_choice.upper()} has already been guessed...")
+            print_hangman(wrong_guesses)
+            print(f"\n Previously guessed letters: \n { list(guessed_letters.upper()) }\n")
+            print(f"You have {6 - wrong_guesses} guess(es) remaining...")
+        else:
+            if player_choice in random_word:
+                print(
+                    f"Correct, {player_choice.upper()} is in the word! " +
+                    f"You have {6 - wrong_guesses} guess(es) remaining...")
+            else:
+                print(
+                    f"Sorry, {player_choice.upper()} is not in the word... " +
+                    f"You have {6 - wrong_guesses} guess(es) remaining..."
+                    )
+                # Add 1 to the wrong_guesses variable
+                wrong_guesses += 1
+            print_hangman(wrong_guesses)
+            # Adds all letters guessed by the user to the guessed_letters variable
+            guessed_letters = guessed_letters + player_choice
+            wrong_letters = 0
+            for letter in random_word:
+                if letter in guessed_letters:
+                    print(f" { letter.upper() } ", end="")
+                else:
+                    print(" _ ", end="")
+                    wrong_letters += 1
+            print(f"\n Previously guessed letters: \n { list(guessed_letters.upper()) }\n")
+            if wrong_letters == 0:
+                print(f"\n Congratulations, you won! The word is {random_word.upper()}!\n")
+                sub_menu()
+                break
     else:
         print("\n Sorry, you lose... Please try again...\n")
         print(f"The word was {random_word.upper()}...\n")
