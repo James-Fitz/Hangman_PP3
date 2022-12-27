@@ -65,8 +65,10 @@ def sub_menu():
             elif selection == 0:
                 clear()
                 quit_game()
+            else:
+                print(f"Error: {selection} is not an option...")
         except ValueError:
-            print("Please choose 0 or 1")
+            print("Error: Not a number")
 
 
 def rules():
@@ -126,27 +128,27 @@ def main_menu():
     print("[2]".rjust(20, " ") + " Rules")
     print("[3]".rjust(20, " ") + " Credits")
     print("[0]".rjust(20, " ") + " Quit\n")
-    selection = int(input("Please select a number to continue...: \n"))
-
-    if selection == 1:
-        clear()
-        run_game()
-        # clears the console and runs the main game
-    elif selection == 2:
-        clear()
-        rules()
-        # print rules for hangman to console
-    elif selection == 3:
-        clear()
-        credits_info()
-        # print thank you and credits to console
-    elif selection == 0:
-        quit_game()
-    else:
-        print(f"""{selection} is not a valid choice,
-                please pick a number from the menu""")
-        main_menu()
-        # will print when an invalid selection is chosen
+    while True:
+        try:
+            selection = int(input("Please select a number from the menu to continue...: \n"))
+            if selection == 1:
+                clear()
+                run_game()
+                # clears the console and runs the main game
+            elif selection == 2:
+                clear()
+                rules()
+                # print rules for hangman to console
+            elif selection == 3:
+                clear()
+                credits_info()
+                # print thank you and credits to console
+            elif selection == 0:
+                quit_game()
+            else:
+                print(f"Error: {selection} is not an option...")
+        except ValueError:
+            print("Error: Not a number")
 
 
 def category_choice():
