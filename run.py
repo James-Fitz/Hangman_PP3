@@ -336,20 +336,26 @@ def new_game(category, difficulty):
         print_hangman(wrong_guesses)
         clear()
         if not player_choice.isalpha():
-            print(f"{player_choice} is not a valid letter...\n")
+            print(
+                f"{player_choice} is not a valid letter...\n" +
+                f"You have {6 - wrong_guesses} guess(es) remaining... \n"
+                )
             print_hangman(wrong_guesses)
             print(f"\n Previously guessed letters: \n { list(guessed_letters.upper()) }\n")
-            print(f"You have {6 - wrong_guesses} guess(es) remaining...")
         elif len(player_choice) != 1:
-            print("Please input one letter at a time...\n")
+            print(
+                "Please input one letter at a time...\n " +
+                f"You have {6 - wrong_guesses} guess(es) remaining... \n"
+                )
             print_hangman(wrong_guesses)
             print(f"\n Previously guessed letters: \n { list(guessed_letters.upper()) }\n")
-            print(f"You have {6 - wrong_guesses} guess(es) remaining...")
         elif player_choice in guessed_letters:
-            print(f"{player_choice.upper()} has already been guessed...")
+            print(
+                f"{player_choice.upper()} has already been guessed..." +
+                f"You have {6 - wrong_guesses} guess(es) remaining... \n"
+                )
             print_hangman(wrong_guesses)
             print(f"\n Previously guessed letters: \n { list(guessed_letters.upper()) }\n")
-            print(f"You have {6 - wrong_guesses} guess(es) remaining...")
         else:
             if player_choice in random_word:
                 print(
