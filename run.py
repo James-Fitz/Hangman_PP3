@@ -388,22 +388,22 @@ def new_game(category, difficulty):
                 )
             print_hangman(wrong_guesses)
             print(
-                f"\n Previously guessed letters: \
-                { list(guessed_letters.upper()) } \n"
+                f"""\n Previously guessed letters: \n
+                { list(guessed_letters.upper()) } \n"""
                 )
         elif len(player_choice) != 1:
             print("Please input one letter at a time... \n")
             print_hangman(wrong_guesses)
             print(
-                f"\n Previously guessed letters: \n \
-                { list(guessed_letters.upper()) }\n"
+                f"""\n Previously guessed letters: \n
+                { list(guessed_letters.upper()) }\n"""
                 )
         elif player_choice in guessed_letters:
             print(f"{player_choice.upper()} has already been guessed...")
             print_hangman(wrong_guesses)
             print(
-                f"\n Previously guessed letters: \n \
-                    { list(guessed_letters.upper()) }\n"
+                f"""\n Previously guessed letters: \n
+                    { list(guessed_letters.upper()) }\n"""
                     )
         else:
             if player_choice in random_word:
