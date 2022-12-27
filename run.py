@@ -161,7 +161,8 @@ def category_choice():
     print("Please select a category...\n".center(48))
     print("[1]".rjust(15, " ") + " Animals")
     print("[2]".rjust(15, " ") + " Brands")
-    print("[3]".rjust(15, " ") + " Countries\n")
+    print("[3]".rjust(15, " ") + " Countries")
+    print("[0]".rjust(15, " ") + " Back\n")
     while True:
         try:
             selection = int(input(
@@ -336,24 +337,15 @@ def new_game(category, difficulty):
         print_hangman(wrong_guesses)
         clear()
         if not player_choice.isalpha():
-            print(
-                f"{player_choice} is not a valid letter...\n" +
-                f"You have {6 - wrong_guesses} guess(es) remaining... \n"
-                )
+            print(f"{player_choice} is not a valid letter... \n")
             print_hangman(wrong_guesses)
             print(f"\n Previously guessed letters: \n { list(guessed_letters.upper()) }\n")
         elif len(player_choice) != 1:
-            print(
-                "Please input one letter at a time...\n " +
-                f"You have {6 - wrong_guesses} guess(es) remaining... \n"
-                )
+            print("Please input one letter at a time... \n")
             print_hangman(wrong_guesses)
             print(f"\n Previously guessed letters: \n { list(guessed_letters.upper()) }\n")
         elif player_choice in guessed_letters:
-            print(
-                f"{player_choice.upper()} has already been guessed..." +
-                f"You have {6 - wrong_guesses} guess(es) remaining... \n"
-                )
+            print(f"{player_choice.upper()} has already been guessed...")
             print_hangman(wrong_guesses)
             print(f"\n Previously guessed letters: \n { list(guessed_letters.upper()) }\n")
         else:
