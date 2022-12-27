@@ -330,7 +330,7 @@ def new_game(category, difficulty):
     print(len(random_word) * " _ ")
     # Create a loop that ends when the player loses. Break if player wins.
     while wrong_guesses < 7:
-        player_choice = input("Please pick a letter...: \n")
+        player_choice = input("Please pick a letter...: \n").upper()
         print(f"Category: { category.capitalize() }")
         print(f"Difficulty level: { difficulty.capitalize() } \n")
         print_hangman(wrong_guesses)
