@@ -170,12 +170,10 @@ def category_choice():
             elif selection == 3:
                 category = "countries"
             else:
-                print("Invalid choice, try again")
-                category_choice()
-            clear()
+                print(f"Error: {selection} is not an option...")
             return category
         except ValueError:
-            print("Not a valid choice, please pick a number from 1-3")
+            print("Error: Not a number")
 
 
 def difficulty_choice():
@@ -199,7 +197,6 @@ def difficulty_choice():
     else:
         print("Invalid choice, try again")
         difficulty_choice()
-    clear()
     return difficulty
 
 
@@ -297,7 +294,9 @@ def run_game():
     Use these variables to run new_game function.
     """
     category = category_choice()
+    clear()
     difficulty = difficulty_choice()
+    clear()
     new_game(category, difficulty)
 
 
