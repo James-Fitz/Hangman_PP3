@@ -188,7 +188,7 @@ def category_choice():
         )
     print(
         colorama.Fore.YELLOW + "[3]".rjust(15, " ")
-        + colorama.Fore.WHITE + " Countries"
+        + colorama.Fore.WHITE + " Countries \n"
         )
     while True:
         try:
@@ -237,6 +237,7 @@ def difficulty_choice():
     while True:
         try:
             selection = int(input(
+                colorama.Fore.WHITE +
                 "Please select a number from the menu to continue...: \n"
                 ))
             if selection == 1:
@@ -249,7 +250,10 @@ def difficulty_choice():
                 difficulty = "hard"
                 return difficulty
             else:
-                print(colorama.Fore.RED + f"Error: {selection} is not an option...")
+                print(
+                    colorama.Fore.RED +
+                    f"Error: {selection} is not an option..."
+                    )
         except ValueError:
             print(colorama.Fore.RED + "Error: Not a number...")
 
@@ -362,14 +366,14 @@ def new_game(category, difficulty):
     # Generate the word the player is trying to guess
     random_word = random.choice(
         SHEET.worksheet(difficulty + "_" + category)
-        .get_values().pop())
+        .get_values().pop()).upper()
     # Print the category and difficulty level chosen by the user
     print(f"Category: { category.capitalize() }")
     print(f"Difficulty level: { difficulty.capitalize() }")
     guessed_letters = ""
     wrong_guesses = 0
     print_hangman(wrong_guesses)
-    print("your word is: ")
+    print(f"your word is: {random_word}")
     print(len(random_word) * " _ ")
     # Create a loop that ends when the player loses. Break if player wins.
     while wrong_guesses < 7:
@@ -384,8 +388,8 @@ def new_game(category, difficulty):
                 )
             print_hangman(wrong_guesses)
             print(
-                f"\n Previously guessed letters: \n \
-                { list(guessed_letters.upper()) }\n"
+                f"\n Previously guessed letters: \
+                { list(guessed_letters.upper()) } \n"
                 )
         elif len(player_choice) != 1:
             print("Please input one letter at a time... \n")
@@ -420,16 +424,21 @@ def new_game(category, difficulty):
             wrong_letters = 0
             for letter in random_word:
                 if letter in guessed_letters:
-                    print(colorama.Fore.GREEN + f" { letter.upper() } ", end="")
+                    print(
+                        f" { letter.upper() } ", end=""
+                        )
                 else:
-                    print(colorama.Fore.RED + " _ ", end="")
+                    print(" _ ", end="")
                     wrong_letters += 1
-            print(f"\n Previously guessed letters: \n \
-                { list(guessed_letters.upper()) }\n")
+            print(
+                f"""\n Previously guessed letters: \n
+                { list(guessed_letters.upper()) }\n"""
+                )
             if wrong_letters == 0:
                 print(
-                    f"\n Congratulations, you won! \
-                    The word is {random_word.upper()}!\n")
+                    f"""\n Congratulations, you won!
+                    The word is {random_word.upper()}!\n"""
+                    )
                 sub_menu()
                 break
     else:
