@@ -68,7 +68,7 @@ def sub_menu():
             else:
                 print(f"Error: {selection} is not an option...")
         except ValueError:
-            print("Error: Not a number")
+            print("Error: Not a number...")
 
 
 def rules():
@@ -81,7 +81,7 @@ def rules():
         You will be given a choice of 3 categories to choose from.\n
         You will be given a choice of 3 difficulty levels to choose from.\n
         The object of the game is to guess to mystery word by guessing letters
-        from the word.\n
+        from the word, one at a time.\n
         Each time you guess a letter incorrectly, another body part of the
         hangman will be drawn.\n
         When the hangman is complete, you lose.\n
@@ -150,7 +150,7 @@ def main_menu():
             else:
                 print(f"Error: {selection} is not an option...")
         except ValueError:
-            print("Error: Not a number")
+            print("Error: Not a number...")
 
 
 def category_choice():
@@ -179,7 +179,7 @@ def category_choice():
             else:
                 print(f"Error: {selection} is not an option...")
         except ValueError:
-            print("Error: Not a number")
+            print("Error: Not a number...")
 
 
 def difficulty_choice():
@@ -210,7 +210,7 @@ def difficulty_choice():
             else:
                 print(f"Error: {selection} is not an option...")
         except ValueError:
-            print("Error: Not a number")
+            print("Error: Not a number...")
 
 
 def print_hangman(wrong_guesses):
@@ -323,18 +323,17 @@ def new_game(category, difficulty):
     # Print the category and difficulty level chosen by the user
     print(f"Category: { category.capitalize() }")
     print(f"Difficulty level: { difficulty.capitalize() }")
-    print("your word is: ")
-    print(len(random_word) * " _ ")
-
     guessed_letters = ""
     wrong_guesses = 0
     print_hangman(wrong_guesses)
+    print("your word is: ")
+    print(len(random_word) * " _ ")
     # Create a loop that ends when the player loses. Break if player wins.
     while wrong_guesses < 7:
         player_choice = input("Please pick a letter...: \n")
         clear()
         print(f"Category: { category.capitalize() }")
-        print(f"Difficulty level: { difficulty.capitalize() }")
+        print(f"Difficulty level: { difficulty.capitalize() } \n")
         if player_choice.isalpha() and len(player_choice) == 1:
             if player_choice in random_word:
                 print(f"Correct, {player_choice.upper()} is in the word!")
@@ -361,7 +360,9 @@ def new_game(category, difficulty):
                 sub_menu()
                 break
         else:
-            print("Invalid choice, please pick again")
+            print(f"Error: {player_choice} is not a valid choice...")
+            print_hangman(wrong_guesses)
+            print(f"\n Previously guessed letters: \n { list(guessed_letters.upper()) }\n")
     else:
         print("\n Sorry, you lose... Please try again...\n")
         print(f"The word was {random_word.upper()}...\n")
