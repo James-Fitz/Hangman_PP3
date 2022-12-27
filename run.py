@@ -56,13 +56,17 @@ def sub_menu():
     """
     print("[1] Main menu")
     print("[0] Quit\n")
-    selection = int(input("Please select a number to continue...: \n"))
-    if selection == 1:
-        clear()
-        main_menu()
-    elif selection == 0:
-        clear()
-        quit_game()
+    while True:
+        try:
+            selection = int(input("Please select a number to continue...: \n"))
+            if selection == 1:
+                clear()
+                main_menu()
+            elif selection == 0:
+                clear()
+                quit_game()
+        except ValueError:
+            print("Please choose 0 or 1")
 
 
 def rules():
@@ -110,6 +114,7 @@ def main_menu():
     Run the appropriate function when user makes choice.
     """
     print(r"""
+  _   _
  | | | | __ _ _ __   __ _ _ __ ___   __ _ _ __
  | |_| |/ _` | '_ \ / _` | '_ ` _ \ / _` | '_ \
  |  _  | (_| | | | | (_| | | | | | | (_| | | | |
@@ -153,20 +158,22 @@ def category_choice():
     print("[1]".rjust(15, " ") + " Animals")
     print("[2]".rjust(15, " ") + " Brands")
     print("[3]".rjust(15, " ") + " Countries\n")
-
-    selection = int(input("Please select a number to continue...: \n"))
-
-    if selection == 1:
-        category = "animals"
-    elif selection == 2:
-        category = "brands"
-    elif selection == 3:
-        category = "countries"
-    else:
-        print("Invalid choice, try again")
-        category_choice()
-    clear()
-    return category
+    while True:
+        try:
+            selection = int(input("Please select a number to continue...: \n"))
+            if selection == 1:
+                category = "animals"
+            elif selection == 2:
+                category = "brands"
+            elif selection == 3:
+                category = "countries"
+            else:
+                print("Invalid choice, try again")
+                category_choice()
+            clear()
+            return category
+        except ValueError:
+            print("Not a valid choice, please pick a number from 1-3")
 
 
 def difficulty_choice():
@@ -313,9 +320,9 @@ def new_game(category, difficulty):
         player_choice = input("Please pick a letter...: \n")
 
         if player_choice in random_word:
-            print(f"Correct, {player_choice} is in the word!")
+            print(f"Correct, {player_choice.upper()} is in the word!")
         else:
-            print(f"Sorry, {player_choice} is not in the word... You have {6 - wrong_guesses} guesses remaining")
+            print(f"Sorry, {player_choice.upper()} is not in the word... You have {6 - wrong_guesses} guesses remaining")
             # Add 1 to the wrong_guesses variable
             wrong_guesses += 1
         print_hangman(wrong_guesses)
@@ -336,7 +343,7 @@ def new_game(category, difficulty):
             break
     else:
         print("Sorry, you lose... Please try again...\n")
-        print(f"The word was {random_word}...\n")
+        print(f"The word was {random_word.upper()}...\n")
         sub_menu()
 
 
