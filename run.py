@@ -34,7 +34,7 @@ def quit_game():
     """
     clear()
     print("Thanks for playing...")
-    print("""
+    print(colorama.Fore.CYAN + """
 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 ░░░▄▄▀▀▀▀▀▄░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 ░░▄▀░░░░░░░▀▄░░░░░░░░░░░░░░░░░░░░░░░░░░
@@ -57,8 +57,8 @@ def sub_menu():
     """
     Sub menu to be called containing main menu and quit options for user.
     """
-    print("[1] Main menu")
-    print("[0] Quit\n")
+    print(colorama.Fore.GREEN + "[1]" + colorama.Fore.WHITE + "Main menu")
+    print(colorama.Fore.RED + "[0]" + colorama.Fore.WHITE + "Quit\n")
     while True:
         try:
             selection = int(input("Please select a number to continue...: \n"))
@@ -78,9 +78,9 @@ def rules():
     """
     Print rules of game and run sub menu function.
     """
-    print(colorama.Fore.RED + "RULES".center(75))
+    print(colorama.Fore.YELLOW + "RULES".center(75))
     print(
-        """
+        colorama.Fore.WHITE + """
         You will be given a choice of 3 categories to choose from.\n
         You will be given a choice of 3 difficulty levels to choose from.\n
         The object of the game is to guess to mystery word by guessing letters
@@ -98,9 +98,9 @@ def credits_info():
     """
     Print credits info and run sub menu function.
     """
-    print("CREDITS".center(75))
+    print(colorama.Fore.YELLOW + "CREDITS".center(75))
     print(
-        """
+        colorama.Fore.WHITE + """
         This game was created by James Fitzpatrick for the Code Institute
         portfolio project 3.\n
         This game was created using the Python programming language.\n
@@ -127,10 +127,22 @@ def main_menu():
                     |___/
                     """)
     print(colorama.Fore.WHITE + "Welcome to Hangman!\n".center(48))
-    print(colorama.Fore.GREEN + "[1]".rjust(20, " ") + colorama.Fore.WHITE + " Play Game")
-    print(colorama.Fore.GREEN + "[2]".rjust(20, " ") + colorama.Fore.WHITE + " Rules")
-    print(colorama.Fore.GREEN + "[3]".rjust(20, " ") + colorama.Fore.WHITE + " Credits")
-    print(colorama.Fore.RED + "[0]".rjust(20, " ") + colorama.Fore.WHITE + " Quit\n")
+    print(
+        colorama.Fore.GREEN + "[1]".rjust(20, " ")
+        + colorama.Fore.WHITE + " Play Game"
+        )
+    print(
+        colorama.Fore.GREEN + "[2]".rjust(20, " ")
+        + colorama.Fore.WHITE + " Rules"
+        )
+    print(
+        colorama.Fore.GREEN + "[3]".rjust(20, " ")
+        + colorama.Fore.WHITE + " Credits"
+        )
+    print(
+        colorama.Fore.RED + "[0]".rjust(20, " ")
+        + colorama.Fore.WHITE + " Quit\n"
+        )
     while True:
         try:
             selection = int(input(
@@ -151,9 +163,9 @@ def main_menu():
             elif selection == 0:
                 quit_game()
             else:
-                print(f"Error: {selection} is not an option...")
+                print(colorama.Fore.RED + f"Error: {selection} is not an option...")
         except ValueError:
-            print("Error: Not a number...")
+            print(colorama.Fore.RED + "Error: Not a number...")
 
 
 def category_choice():
@@ -162,10 +174,9 @@ def category_choice():
     Return chosen category.
     """
     print("Please select a category...\n".center(48))
-    print("[1]".rjust(15, " ") + " Animals")
-    print("[2]".rjust(15, " ") + " Brands")
-    print("[3]".rjust(15, " ") + " Countries")
-    print("[0]".rjust(15, " ") + " Back\n")
+    print(colorama.Fore.GREEN + "[1]".rjust(15, " ") + colorama.Fore.WHITE + " Animals")
+    print(colorama.Fore.CYAN + "[2]".rjust(15, " ") + colorama.Fore.WHITE + " Brands")
+    print(colorama.Fore.YELLOW + "[3]".rjust(15, " ") + colorama.Fore.WHITE + " Countries")
     while True:
         try:
             selection = int(input(
@@ -181,9 +192,9 @@ def category_choice():
                 category = "countries"
                 return category
             else:
-                print(f"Error: {selection} is not an option...")
+                print(colorama.Fore.RED + f"Error: {selection} is not an option...")
         except ValueError:
-            print("Error: Not a number...")
+            print(colorama.Fore.RED + "Error: Not a number...")
 
 
 def difficulty_choice():
@@ -192,11 +203,15 @@ def difficulty_choice():
     Return chosen difficulty.
     """
     print("Please select a difficulty level...\n".center(48))
-    print("[1]".rjust(10, " ") + " Easy:".ljust(15, " ") + " 5 letters")
     print(
-        "[2]".rjust(10, " ") + " Intermediate:".ljust(15, " ") + " 6 letters"
+        colorama.Fore.GREEN + "[1]".rjust(10, " ")
+        + colorama.Fore.WHITE + " Easy:".ljust(15, " ")
+        + " 5 letters"
         )
-    print("[3]".rjust(10, " ") + " Hard:".ljust(15, " ") + " 7 letters\n")
+    print(
+        colorama.Fore.YELLOW + "[2]".rjust(10, " ") + colorama.Fore.WHITE + " Intermediate:".ljust(15, " ") + " 6 letters"
+        )
+    print(colorama.Fore.RED + "[3]".rjust(10, " ") + colorama.Fore.WHITE + " Hard:".ljust(15, " ") + " 7 letters\n")
     while True:
         try:
             selection = int(input(
