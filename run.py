@@ -130,7 +130,9 @@ def main_menu():
     print("[0]".rjust(20, " ") + " Quit\n")
     while True:
         try:
-            selection = int(input("Please select a number from the menu to continue...: \n"))
+            selection = int(input(
+                "Please select a number from the menu to continue...: \n"
+                ))
             if selection == 1:
                 clear()
                 run_game()
@@ -162,7 +164,9 @@ def category_choice():
     print("[3]".rjust(15, " ") + " Countries\n")
     while True:
         try:
-            selection = int(input("Please select a number from the menu to continue...: \n"))
+            selection = int(input(
+                "Please select a number from the menu to continue...: \n"
+                ))
             if selection == 1:
                 category = "animals"
                 return category
@@ -184,12 +188,16 @@ def difficulty_choice():
     Return chosen difficulty.
     """
     print("Please select a difficulty level...\n".center(48))
-    print("[1]".rjust(10, " ") + " Easy:".ljust(15, " ") + " 5 letter word")
-    print("[2]".rjust(10, " ") + " Intermediate:".ljust(15, " ") + " 6 letter word")
-    print("[3]".rjust(10, " ") + " Hard:".ljust(15, " ") + " 7 letter word\n")
+    print("[1]".rjust(10, " ") + " Easy:".ljust(15, " ") + " 5 letters")
+    print(
+        "[2]".rjust(10, " ") + " Intermediate:".ljust(15, " ") + " 6 letters"
+        )
+    print("[3]".rjust(10, " ") + " Hard:".ljust(15, " ") + " 7 letters\n")
     while True:
         try:
-            selection = int(input("Please select a number from the menu to continue...: \n"))
+            selection = int(input(
+                "Please select a number from the menu to continue...: \n"
+                ))
             if selection == 1:
                 difficulty = "easy"
                 return difficulty
@@ -299,7 +307,9 @@ def run_game():
     Use these variables to run new_game function.
     """
     category = category_choice()
+    clear()
     difficulty = difficulty_choice()
+    clear()
     new_game(category, difficulty)
 
 
@@ -321,12 +331,15 @@ def new_game(category, difficulty):
     print_hangman(wrong_guesses)
     # Create a loop that ends when the player loses. Break if player wins.
     while wrong_guesses < 7:
-        player_choice = input("Please pick a letter...: \n")
+        player_choice = input("\n Please pick a letter...: \n")
 
         if player_choice in random_word:
             print(f"Correct, {player_choice.upper()} is in the word!")
         else:
-            print(f"Sorry, {player_choice.upper()} is not in the word... You have {6 - wrong_guesses} guesses remaining")
+            print(
+                f"Sorry, {player_choice.upper()} is not in the word..." +
+                "You have {6 - wrong_guesses} guesses remaining"
+                )
             # Add 1 to the wrong_guesses variable
             wrong_guesses += 1
         print_hangman(wrong_guesses)
@@ -334,7 +347,6 @@ def new_game(category, difficulty):
         guessed_letters = guessed_letters + player_choice
         wrong_letters = 0
         print(f"Previously guessed letters: \n { list(guessed_letters.upper()) }\n")
-
         for letter in random_word:
             if letter in guessed_letters:
                 print(f" { letter.upper() } ", end="")
@@ -342,11 +354,11 @@ def new_game(category, difficulty):
                 print(" _ ", end="")
                 wrong_letters += 1
         if wrong_letters == 0:
-            print(f"Congratulations, you won! The word is {random_word}!\n")
+            print(f"\n Congratulations, you won! The word is {random_word}!\n")
             sub_menu()
             break
     else:
-        print("Sorry, you lose... Please try again...\n")
+        print("\n Sorry, you lose... Please try again...\n")
         print(f"The word was {random_word.upper()}...\n")
         sub_menu()
 
