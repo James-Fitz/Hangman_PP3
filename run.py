@@ -193,6 +193,7 @@ def category_choice():
     while True:
         try:
             selection = int(input(
+                colorama.Fore.WHITE +
                 "Please select a number from the menu to continue...: \n"
                 ))
             if selection == 1:
@@ -248,9 +249,9 @@ def difficulty_choice():
                 difficulty = "hard"
                 return difficulty
             else:
-                print(f"Error: {selection} is not an option...")
+                print(colorama.Fore.RED + f"Error: {selection} is not an option...")
         except ValueError:
-            print("Error: Not a number...")
+            print(colorama.Fore.RED + "Error: Not a number...")
 
 
 def print_hangman(wrong_guesses):
@@ -419,9 +420,9 @@ def new_game(category, difficulty):
             wrong_letters = 0
             for letter in random_word:
                 if letter in guessed_letters:
-                    print(f" { letter.upper() } ", end="")
+                    print(colorama.Fore.GREEN + f" { letter.upper() } ", end="")
                 else:
-                    print(" _ ", end="")
+                    print(colorama.Fore.RED + " _ ", end="")
                     wrong_letters += 1
             print(f"\n Previously guessed letters: \n \
                 { list(guessed_letters.upper()) }\n")
