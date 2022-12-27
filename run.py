@@ -162,16 +162,18 @@ def category_choice():
     print("[3]".rjust(15, " ") + " Countries\n")
     while True:
         try:
-            selection = int(input("Please select a number to continue...: \n"))
+            selection = int(input("Please select a number from the menu to continue...: \n"))
             if selection == 1:
                 category = "animals"
+                return category
             elif selection == 2:
                 category = "brands"
+                return category
             elif selection == 3:
                 category = "countries"
+                return category
             else:
                 print(f"Error: {selection} is not an option...")
-            return category
         except ValueError:
             print("Error: Not a number")
 
@@ -185,19 +187,22 @@ def difficulty_choice():
     print("[1]".rjust(10, " ") + " Easy:".ljust(15, " ") + " 5 letter word")
     print("[2]".rjust(10, " ") + " Intermediate:".ljust(15, " ") + " 6 letter word")
     print("[3]".rjust(10, " ") + " Hard:".ljust(15, " ") + " 7 letter word\n")
-
-    selection = int(input("Please select a number to continue...: \n"))
-
-    if selection == 1:
-        difficulty = "easy"
-    elif selection == 2:
-        difficulty = "intermediate"
-    elif selection == 3:
-        difficulty = "hard"
-    else:
-        print("Invalid choice, try again")
-        difficulty_choice()
-    return difficulty
+    while True:
+        try:
+            selection = int(input("Please select a number from the menu to continue...: \n"))
+            if selection == 1:
+                difficulty = "easy"
+                return difficulty
+            elif selection == 2:
+                difficulty = "intermediate"
+                return difficulty
+            elif selection == 3:
+                difficulty = "hard"
+                return difficulty
+            else:
+                print(f"Error: {selection} is not an option...")
+        except ValueError:
+            print("Error: Not a number")
 
 
 def print_hangman(wrong_guesses):
@@ -294,9 +299,7 @@ def run_game():
     Use these variables to run new_game function.
     """
     category = category_choice()
-    clear()
     difficulty = difficulty_choice()
-    clear()
     new_game(category, difficulty)
 
 
