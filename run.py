@@ -118,7 +118,7 @@ def main_menu():
     Print options for main menu to console.
     Run the appropriate function when user makes choice.
     """
-    print(r"""
+    print(colorama.Fore.CYAN + r"""
   _   _
  | | | | __ _ _ __   __ _ _ __ ___   __ _ _ __
  | |_| |/ _` | '_ \ / _` | '_ ` _ \ / _` | '_ \
@@ -126,15 +126,15 @@ def main_menu():
  |_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
                     |___/
                     """)
-    print("Welcome to Hangman!\n".center(48))
-    print("[1]".rjust(20, " ") + " Play Game")
-    print("[2]".rjust(20, " ") + " Rules")
-    print("[3]".rjust(20, " ") + " Credits")
-    print("[0]".rjust(20, " ") + " Quit\n")
+    print(colorama.Fore.WHITE + "Welcome to Hangman!\n".center(48))
+    print(colorama.Fore.GREEN + "[1]".rjust(20, " ") + colorama.Fore.WHITE + " Play Game")
+    print(colorama.Fore.GREEN + "[2]".rjust(20, " ") + colorama.Fore.WHITE + " Rules")
+    print(colorama.Fore.GREEN + "[3]".rjust(20, " ") + colorama.Fore.WHITE + " Credits")
+    print(colorama.Fore.RED + "[0]".rjust(20, " ") + colorama.Fore.WHITE + " Quit\n")
     while True:
         try:
             selection = int(input(
-                "Please select a number from the menu to continue...: \n"
+                colorama.Fore.WHITE + "Please select a number from the menu to continue...: \n"
                 ))
             if selection == 1:
                 clear()
