@@ -4,7 +4,10 @@ Import all neccessary functions
 import random
 import os
 import gspread
+import colorama
 from google.oauth2.service_account import Credentials
+
+colorama.init()
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -75,7 +78,7 @@ def rules():
     """
     Print rules of game and run sub menu function.
     """
-    print("RULES".center(75))
+    print(colorama.Fore.RED + "RULES".center(75))
     print(
         """
         You will be given a choice of 3 categories to choose from.\n
