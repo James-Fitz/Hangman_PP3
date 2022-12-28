@@ -387,30 +387,15 @@ def new_game(category, difficulty):
                 f"{player_choice} is not a valid letter... \n"
                 )
             print_hangman(wrong_guesses)
-            print(
-                f"""
-                Previously guessed letters:
-                { list(guessed_letters.upper()) }
-                """
-                )
+            print(f"Previously guessed letters:{ list(guessed_letters.upper()) }")
         elif len(player_choice) != 1:
             print("Please input one letter at a time... \n")
             print_hangman(wrong_guesses)
-            print(
-                f"""
-                Previously guessed letters:
-                { list(guessed_letters.upper()) }
-                """
-                )
+            print(f"Previously guessed letters:{ list(guessed_letters.upper()) }")
         elif player_choice in guessed_letters:
             print(f"{player_choice.upper()} has already been guessed...")
             print_hangman(wrong_guesses)
-            print(
-                f"""
-                Previously guessed letters:
-                { list(guessed_letters.upper()) }
-                """
-                )
+            print(f"Previously guessed letters: \n{list(guessed_letters.upper())}")
         else:
             if player_choice in random_word:
                 print(
@@ -436,12 +421,7 @@ def new_game(category, difficulty):
                 else:
                     print(" _ ", end="")
                     wrong_letters += 1
-            print(
-                f"""
-                Previously guessed letters:
-                { list(guessed_letters.upper()) }
-                """
-                )
+            print(f"Previously guessed letters:{list(guessed_letters.upper())}")
             if wrong_letters == 0:
                 print(
                     colorama.Fore.GREEN +
