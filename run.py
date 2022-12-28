@@ -374,7 +374,7 @@ def new_game(category, difficulty):
     wrong_guesses = 0
     print_hangman(wrong_guesses)
     print(f"your word is: {random_word}")
-    print(len(random_word) * " _ ")
+    print(len(random_word) * " _ " + "\n ")
     # Create a loop that ends when the player loses. Break if player wins.
     while wrong_guesses < 7:
         player_choice = input("Please pick a letter...: \n").upper()
@@ -387,15 +387,15 @@ def new_game(category, difficulty):
                 f"{player_choice} is not a valid letter... \n"
                 )
             print_hangman(wrong_guesses)
-            print(f"Previously guessed letters:{ list(guessed_letters.upper()) }")
+            print(f" \nPreviously guessed letters: \n{list(guessed_letters.upper())}" + "\n ")
         elif len(player_choice) != 1:
             print("Please input one letter at a time... \n")
             print_hangman(wrong_guesses)
-            print(f"Previously guessed letters:{ list(guessed_letters.upper()) }")
+            print(f" \nPreviously guessed letters: \n{list(guessed_letters.upper())}" + "\n ")
         elif player_choice in guessed_letters:
             print(f"{player_choice.upper()} has already been guessed...")
             print_hangman(wrong_guesses)
-            print(f"Previously guessed letters: \n{list(guessed_letters.upper())}")
+            print(f" \nPreviously guessed letters: \n{list(guessed_letters.upper())}" + "\n ")
         else:
             if player_choice in random_word:
                 print(
@@ -421,7 +421,8 @@ def new_game(category, difficulty):
                 else:
                     print(" _ ", end="")
                     wrong_letters += 1
-            print(f"Previously guessed letters:{list(guessed_letters.upper())}")
+            print(" ")
+            print(f"\nPreviously guessed letters: \n{list(guessed_letters.upper())}" + "\n ")
             if wrong_letters == 0:
                 print(
                     colorama.Fore.GREEN +
@@ -433,7 +434,7 @@ def new_game(category, difficulty):
     else:
         print(
             colorama.Fore.RED +
-            "\n Sorry, you lose... Please try again...\n")
+            "\nSorry, you lose... Please try again...\n")
         print(f"The word was {random_word.upper()}...\n")
         sub_menu()
 
