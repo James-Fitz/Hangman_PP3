@@ -61,7 +61,8 @@ def sub_menu():
     print(colorama.Fore.RED + "[0]" + colorama.Fore.WHITE + "Quit\n")
     while True:
         try:
-            selection = int(input("Please select a number to continue...: \n"))
+            selection = int(input(
+                "Please select a number from the menu to continue...: \n"))
             if selection == 1:
                 clear()
                 main_menu()
@@ -69,7 +70,7 @@ def sub_menu():
                 clear()
                 quit_game()
             else:
-                print(f"Error: {selection} is not an option...")
+                print(f'Error: {selection} is not an option...')
         except ValueError:
             print("Error: Not a number...")
 
