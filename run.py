@@ -388,21 +388,32 @@ def new_game(category, difficulty):
                 f"{player_choice} is not a valid letter... " +
                 f"You have {7 - wrong_guesses} guess(es) remaining...")
             print_hangman(wrong_guesses)
-            print("\nPreviously guessed letters:")
+            guessed_letters = guessed_letters + player_choice
+            wrong_letters = 0
+            for letter in random_word:
+                if letter in guessed_letters:
+                    print(
+                        f" { letter.upper() } ", end=""
+                        )
+                else:
+                    print(" _ ", end="")
+                    wrong_letters += 1
+            print("")
+            print("\nPreviously guessed letters: \n")
             print(f"{list(guessed_letters.upper())}" + "\n ")
         elif len(player_choice) != 1:
             print(
                 "Please input one letter at a time..." +
                 f"You have {7 - wrong_guesses} guess(es) remaining...")
             print_hangman(wrong_guesses)
-            print("\nPreviously guessed letters:")
+            print("\nPreviously guessed letters: \n")
             print(f"{list(guessed_letters.upper())}" + "\n ")
         elif player_choice in guessed_letters:
             print(
                 f"{player_choice.upper()} has already been guessed..." +
                 f"You have {7 - wrong_guesses} guess(es) remaining...")
             print_hangman(wrong_guesses)
-            print("\nPreviously guessed letters:")
+            print("\nPreviously guessed letters: \n")
             print(f"{list(guessed_letters.upper())}" + "\n ")
         else:
             if player_choice in random_word:
@@ -430,7 +441,7 @@ def new_game(category, difficulty):
                     print(" _ ", end="")
                     wrong_letters += 1
             print(" ")
-            print("\nPreviously guessed letters:")
+            print("\nPreviously guessed letters: \n")
             print(f"{list(guessed_letters.upper())}" + "\n ")
             if wrong_letters == 0:
                 print(
