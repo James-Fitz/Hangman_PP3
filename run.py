@@ -388,8 +388,10 @@ def new_game(category, difficulty):
         print(f"Difficulty level: { difficulty.capitalize() } \n")
         if not player_choice.isalpha():
             print(
+                colorama.Fore.RED +
                 f"{player_choice} is not a valid letter... " +
-                f"You have {7 - wrong_guesses} guess(es) remaining...")
+                colorama.Fore.WHITE +
+                f"You have {7 - wrong_guesses} guess(es) remaining... \n")
             guessed_letters = guessed_letters + player_choice
             wrong_letters = 0
             for letter in random_word:
@@ -403,22 +405,29 @@ def new_game(category, difficulty):
             print("")
         elif len(player_choice) != 1:
             print(
-                "Please input one letter at a time..." +
-                f"You have {7 - wrong_guesses} guess(es) remaining...")
+                colorama.Fore.RED + "Please input one letter at a time..." +
+                colorama.Fore.WHITE +
+                f"You have {7 - wrong_guesses} guess(es) remaining... \n")
         elif player_choice in guessed_letters:
             print(
+                colorama.Fore.RED +
                 f"{player_choice.upper()} has already been guessed..." +
-                f"You have {7 - wrong_guesses} guess(es) remaining...")
+                colorama.Fore.WHITE +
+                f"You have {7 - wrong_guesses} guess(es) remaining... \n")
         else:
             if player_choice in random_word:
                 print(
+                    colorama.Fore.GREEN +
                     f"Correct, {player_choice.upper()} is in the word! " +
+                    colorama.Fore.WHITE +
                     f"You have {7 - wrong_guesses} guess(es) remaining... \n")
             else:
                 # Add 1 to the wrong_guesses variable
                 wrong_guesses += 1
                 print(
+                    colorama.Fore.RED +
                     f"Sorry, {player_choice.upper()} is not in the word... " +
+                    colorama.Fore.WHITE +
                     f"You have {7 - wrong_guesses} guess(es) remaining... \n"
                     )
             # Adds all letters guessed by the user
