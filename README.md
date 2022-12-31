@@ -37,6 +37,10 @@ When the game is over, the results will be displayed and the sub menu will be di
   - [**UX and Design**](#ux-and-design)
   - [**Features**](#features)
   - [**Testing**](#testing)
+    - [Python Linter Validation](#python-linter-validation)
+    - [Input Testing](#input-testing)
+    - [Browser Tests](#browser-tests)
+    - [Bugs and Errors](#bugs-and-errors)
   - [**Technology Used**](#technology-used)
     - [Imports](#imports)
   - [**Deployment**](#deployment)
@@ -152,6 +156,20 @@ Add difficulty choice image here
 </details>
 
 ## **Testing**  
+
+### Python Linter Validation
+
+### Input Testing
+
+Insert table with all input testing,area to test, input required, expected results, outcome, pass/fail.
+
+### Browser Tests
+
+Insert table with images of app running on multiple browsers.
+
+### Bugs and Errors
+
+No bugs in the program
 
 ## **Technology Used**  
 
