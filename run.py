@@ -70,7 +70,7 @@ def sub_menu():
                 clear()
                 quit_game()
             else:
-                print(f'Error: {selection} is not an option...')
+                print(f"Error: {selection} is not an option...")
         except ValueError:
             print("Error: Not a number...")
 
@@ -357,7 +357,7 @@ def run_game():
     difficulty = difficulty_choice()
     clear()
     print(f"Category: { category.capitalize() }")
-    print(f"Difficulty level: { difficulty.capitalize() }")
+    print(f"Difficulty level: { difficulty.capitalize() } \n")
     new_game(category, difficulty)
 
 
@@ -379,10 +379,9 @@ def new_game(category, difficulty):
     # Create a loop that ends when the player loses. Break if player wins.
     while wrong_guesses < 7:
         player_choice = input("Please pick a letter...: \n").upper()
+        clear()
         print(f"Category: { category.capitalize() }")
         print(f"Difficulty level: { difficulty.capitalize() } \n")
-        print_hangman(wrong_guesses)
-        clear()
         if not player_choice.isalpha():
             print(
                 f"{player_choice} is not a valid letter... " +
