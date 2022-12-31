@@ -1,6 +1,6 @@
 # **Hangman**
 
-Am I Responsive Image
+inser Am I Responsive Image here
 
 <br>
 
@@ -35,6 +35,7 @@ When the game is over, the results will be displayed and the sub menu will be di
   - [**Introduction**](#introduction)
   - [**Table of Contents**](#table-of-contents)
   - [**UX and Design**](#ux-and-design)
+  - [**Features**](#features)
 
 
 
@@ -80,3 +81,53 @@ If the user guesses a letter correctly or wins the game, they will be given a me
 - Ability to return to the main menu at the end of the game.
 
 </details>
+
+<details><summary>Flow Chart</summary>  
+
+Insert flowchart here
+
+</details>
+
+<details><summary>Wireframe</summary>  
+
+Insert wireframe here
+
+</details>
+
+<details><summary>Color Palette</summary>
+
+As this is a terminal based project, there wasn't much scope for color modifications.
+I added color to the terminal using colorama, and I added a simple red to cyan gradient background to the body of the page using css.
+
+## **Features** 
+<details><summary>Main Menu</summary>     
+
+Add main menu image here
+
+</details>
+
+<details><summary>Sub Menu</summary>  
+
+Add sub menu image here
+
+</details>
+
+<details><summary>Category Choice</summary>
+
+Add category choice image here
+
+</details>
+
+<details><summary>Difficulty Choice</summary>
+
+Add difficulty choice image here
+
+</details>
+
+<details><summary>Future Features</summary>  
+
+- Ability for player to input their own words or categories that will be pushed to the google sheet.  
+- Ability for the player to guess the whole word at once rather than letter by letter.
+- Implementation of timed game mode that will allocate a specified amount to time to make a guess depending on the difficulty level.
+
+</details>  
