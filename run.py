@@ -407,12 +407,30 @@ def new_game(category, difficulty):
                 colorama.Fore.RED + "Please input one letter at a time..." +
                 colorama.Fore.WHITE +
                 f"You have {7 - wrong_guesses} guess(es) remaining... \n")
+            wrong_letters = 0
+            for letter in random_word:
+                if letter in guessed_letters:
+                    print(
+                        f" { letter.upper() } ", end=""
+                        )
+                else:
+                    print(" _ ", end="")
+                    wrong_letters += 1
         elif player_choice in guessed_letters:
             print(
                 colorama.Fore.RED +
                 f"{player_choice.upper()} has already been guessed..." +
                 colorama.Fore.WHITE +
                 f"You have {7 - wrong_guesses} guess(es) remaining... \n")
+            wrong_letters = 0
+            for letter in random_word:
+                if letter in guessed_letters:
+                    print(
+                        f" { letter.upper() } ", end=""
+                        )
+                else:
+                    print(" _ ", end="")
+                    wrong_letters += 1
         else:
             if player_choice in random_word:
                 print(
