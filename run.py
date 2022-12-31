@@ -356,6 +356,8 @@ def run_game():
     clear()
     difficulty = difficulty_choice()
     clear()
+    print(f"Category: { category.capitalize() }")
+    print(f"Difficulty level: { difficulty.capitalize() }")
     new_game(category, difficulty)
 
 
@@ -369,8 +371,6 @@ def new_game(category, difficulty):
         SHEET.worksheet(difficulty + "_" + category)
         .get_values().pop()).upper()
     # Print the category and difficulty level chosen by the user
-    print(f"Category: { category.capitalize() }")
-    print(f"Difficulty level: { difficulty.capitalize() }")
     guessed_letters = ""
     wrong_guesses = 0
     print_hangman(wrong_guesses)
