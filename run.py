@@ -416,6 +416,7 @@ def new_game(category, difficulty):
                 else:
                     print(" _ ", end="")
                     wrong_letters += 1
+            print("")
         elif player_choice in guessed_letters:
             print(
                 colorama.Fore.RED +
@@ -431,6 +432,7 @@ def new_game(category, difficulty):
                 else:
                     print(" _ ", end="")
                     wrong_letters += 1
+            print("")
         else:
             if player_choice in random_word:
                 print(
