@@ -87,7 +87,7 @@ def rules():
         colorama.Fore.WHITE + """
         You will be given a choice of 3 categories to choose from.\n
         You will be given a choice of 3 difficulty levels to choose from.\n
-        The object of the game is to guess to mystery word by guessing letters
+        The object of the game is to guess the mystery word by guessing letters
         from the word, one at a time.\n
         Each time you guess a letter incorrectly, another body part of the
         hangman will be drawn.\n
@@ -404,7 +404,7 @@ def new_game(category, difficulty):
             print("")
         elif len(player_choice) != 1:
             print(
-                colorama.Fore.RED + "Please input one letter at a time..." +
+                colorama.Fore.RED + "Please input one letter at a time... " +
                 colorama.Fore.WHITE +
                 f"You have {7 - wrong_guesses} guess(es) remaining... \n")
             wrong_letters = 0
@@ -420,7 +420,7 @@ def new_game(category, difficulty):
         elif player_choice in guessed_letters:
             print(
                 colorama.Fore.RED +
-                f"{player_choice.upper()} has already been guessed..." +
+                f"{player_choice.upper()} has already been guessed... " +
                 colorama.Fore.WHITE +
                 f"You have {7 - wrong_guesses} guess(es) remaining... \n")
             wrong_letters = 0

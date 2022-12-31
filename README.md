@@ -19,7 +19,7 @@ User input is accepted through number or letter entries into the command line of
 
 I decided to allow the user to choose a category of words to pick from (animals, brands or countries), and also a difficulty level to choose from (easy: 5 letter word, intermediate: 6 letter word, or hard: 7 letter word.)
 
-These words are stored on an external google spreadsheet which makes it very simple to add or remove words from the game.
+These words are stored on an external google spreadsheet which makes it very simple to add or remove words from the game at any time.
 
 Oncde the user begins a new game, they must input one letter at a time to guess the hidden word.
 If the user guesses a letter correctly, the letter will be revealed.
@@ -56,3 +56,27 @@ Once the user chooses a category they are given a choice of diificulty levels.
 Easy, Intermediate or Hard.
 These numbers are color coded green, yellow and red respectively as these are universally understood colors to indicated difficulty level.
 
+Once the user has chosen the difficulty level the game screen will be displayed.
+The category and difficulty choice will remain at the top of the page.
+Below these, there are a number underscores denoting the amount of letters in the word.
+Below the underscores, there will be an ASCII art image of a gallows, showing the player how close they are to losing.
+Below the gallows is a player input request.
+
+I have used red and green throughout this project to inform the user when an invalid/incorrect entry has been made and when a valid/correct entry has been made .
+
+If a user inputs an invalid entry, an incorrect answer or loses the game, they will be given a message in red.
+
+If the user guesses a letter correctly or wins the game, they will be given a message in green.
+
+<details><summary>User Experience and Expectations</summary>  
+
+- Simple game to play.
+- Clear instructions and rules.
+- Simple design and easy navigation.
+- intuative design where results and outcomes are easily identified.
+- Clear indication of input errors.
+- Ability to see progress throughout the game, how many guesses left, how many letters guessed correctly.
+- Variety and choice for a new experience every time.
+- Ability to return to the main menu at the end of the game.
+
+</details>
