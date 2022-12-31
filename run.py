@@ -392,7 +392,6 @@ def new_game(category, difficulty):
                 f"{player_choice} is not a valid letter... " +
                 colorama.Fore.WHITE +
                 f"You have {7 - wrong_guesses} guess(es) remaining... \n")
-            guessed_letters = guessed_letters + player_choice
             wrong_letters = 0
             for letter in random_word:
                 if letter in guessed_letters:
