@@ -373,11 +373,12 @@ def new_game(category, difficulty):
     # Print the category and difficulty level chosen by the user
     guessed_letters = ""
     wrong_guesses = 0
-    print_hangman(wrong_guesses)
-    print(f"your word is: {random_word}")
     print(len(random_word) * " _ " + "\n ")
+    print_hangman(wrong_guesses)
+    # print(f"your word is: {random_word}")
     # Create a loop that ends when the player loses. Break if player wins.
     while wrong_guesses < 7:
+        print("")
         player_choice = input("Please pick a letter...: \n").upper()
         clear()
         print(f"Category: { category.capitalize() }")
@@ -386,7 +387,6 @@ def new_game(category, difficulty):
             print(
                 f"{player_choice} is not a valid letter... " +
                 f"You have {7 - wrong_guesses} guess(es) remaining...")
-            print_hangman(wrong_guesses)
             guessed_letters = guessed_letters + player_choice
             wrong_letters = 0
             for letter in random_word:
@@ -398,35 +398,26 @@ def new_game(category, difficulty):
                     print(" _ ", end="")
                     wrong_letters += 1
             print("")
-            print("\nPreviously guessed letters: \n")
-            print(f"{list(guessed_letters.upper())}" + "\n ")
         elif len(player_choice) != 1:
             print(
                 "Please input one letter at a time..." +
                 f"You have {7 - wrong_guesses} guess(es) remaining...")
-            print_hangman(wrong_guesses)
-            print("\nPreviously guessed letters: \n")
-            print(f"{list(guessed_letters.upper())}" + "\n ")
         elif player_choice in guessed_letters:
             print(
                 f"{player_choice.upper()} has already been guessed..." +
                 f"You have {7 - wrong_guesses} guess(es) remaining...")
-            print_hangman(wrong_guesses)
-            print("\nPreviously guessed letters: \n")
-            print(f"{list(guessed_letters.upper())}" + "\n ")
         else:
             if player_choice in random_word:
                 print(
                     f"Correct, {player_choice.upper()} is in the word! " +
-                    f"You have {7 - wrong_guesses} guess(es) remaining...")
+                    f"You have {7 - wrong_guesses} guess(es) remaining... \n")
             else:
                 # Add 1 to the wrong_guesses variable
                 wrong_guesses += 1
                 print(
                     f"Sorry, {player_choice.upper()} is not in the word... " +
-                    f"You have {7 - wrong_guesses} guess(es) remaining..."
+                    f"You have {7 - wrong_guesses} guess(es) remaining... \n"
                     )
-            print_hangman(wrong_guesses)
             # Adds all letters guessed by the user
             # to the guessed_letters variable.
             guessed_letters = guessed_letters + player_choice
@@ -440,9 +431,8 @@ def new_game(category, difficulty):
                     print(" _ ", end="")
                     wrong_letters += 1
             print(" ")
-            print("\nPreviously guessed letters: \n")
-            print(f"{list(guessed_letters.upper())}" + "\n ")
             if wrong_letters == 0:
+                print_hangman(wrong_guesses)
                 print(
                     colorama.Fore.GREEN +
                     "Congratulations, you won! \n"
@@ -450,6 +440,9 @@ def new_game(category, difficulty):
                 print(f"The word is {random_word.upper()}!\n")
                 sub_menu()
                 break
+        print_hangman(wrong_guesses)
+        print("\nPreviously guessed letters: \n")
+        print(f"{list(guessed_letters.upper())}")
     else:
         print(
             colorama.Fore.RED +
