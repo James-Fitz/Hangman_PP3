@@ -36,6 +36,10 @@ When the game is over, the results will be displayed and the sub menu will be di
   - [**Table of Contents**](#table-of-contents)
   - [**UX and Design**](#ux-and-design)
   - [**Features**](#features)
+  - [**Testing**](#testing)
+  - [**Technology Used**](#technology-used)
+  - [**Deployment**](#deployment)
+  - [**Credits**](#credits)
 
 
 
@@ -141,5 +145,29 @@ Add difficulty choice image here
 - Ability for player to input their own words or categories that will be pushed to the google sheet.  
 - Ability for the player to guess the whole word at once rather than letter by letter.
 - Implementation of timed game mode that will allocate a specified amount to time to make a guess depending on the difficulty level.
+
+</details>
+
+## **Testing**  
+
+## **Technology Used**  
+
+## **Deployment**  
+
+## **Credits**  
+
+<details><summary>Media</summary>  
+
+Add ascii links here
+
+</details>  
+
+<details><summary>Code</summary>  
+
+- Colorama tutorial
+- Code institute tutors
+- Fellow students in the CI Slack community
+- Stack overflow
+- Mentor Chris Quinn
 
 </details>  
