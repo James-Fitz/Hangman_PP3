@@ -38,6 +38,7 @@ When the game is over, the results will be displayed and the sub menu will be di
   - [**Features**](#features)
   - [**Testing**](#testing)
   - [**Technology Used**](#technology-used)
+    - [Imports](#imports)
   - [**Deployment**](#deployment)
   - [**Credits**](#credits)
 
@@ -103,6 +104,8 @@ Insert wireframe here
 As this is a terminal based project, there wasn't much scope for color modifications.
 I added color to the terminal using colorama, and I added a simple red to cyan gradient background to the body of the page using css.
 
+</details>
+
 ## **Features** 
 <details><summary>Main Menu</summary>     
 
@@ -152,6 +155,21 @@ Add difficulty choice image here
 
 ## **Technology Used**  
 
+- Python programming language
+- Github
+- Gitpod
+- Google sheets
+- Google cloud
+- Balsamiq
+- Lucidchart 
+  
+### Imports
+
+- random - Allow a random word to be chosen.
+- os - Allow clear function to clear terminal.
+- gspread - Allow program to link with google sheets.
+- colorama - Allow terminal print messages to be colored.
+
 ## **Deployment**  
 
 ## **Credits**  
@@ -159,6 +177,8 @@ Add difficulty choice image here
 <details><summary>Media</summary>  
 
 Add ascii links here
+Flowchart made using lucidchart
+Wireframes made using Balsamiq
 
 </details>  
 
