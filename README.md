@@ -9,3 +9,10 @@ Am I Responsive Image
 <br>
 
 ## **Introduction**
+
+<br>
+
+## **Table of Contents**
+- [**Hangman**](#hangman)
+  - [**Introduction**](#introduction)
+  - [**Table of Contents**](#table-of-contents)
