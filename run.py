@@ -62,6 +62,7 @@ def sub_menu():
     while True:
         try:
             selection = int(input(
+                colorama.Fore.WHITE +
                 "Please select a number from the menu to continue...: \n"))
             if selection == 1:
                 clear()
@@ -70,9 +71,11 @@ def sub_menu():
                 clear()
                 quit_game()
             else:
-                print(f"Error: {selection} is not an option...")
+                print(
+                    colorama.Fore.RED +
+                    f"Error: {selection} is not an option... \n")
         except ValueError:
-            print("Error: Not a number...")
+            print(colorama.Fore.RED + "Error: Not a number... \n")
 
 
 def rules():
@@ -167,10 +170,10 @@ def main_menu():
             else:
                 print(
                     colorama.Fore.RED +
-                    f"Error: {selection} is not an option..."
+                    f"Error: {selection} is not an option... \n"
                     )
         except ValueError:
-            print(colorama.Fore.RED + "Error: Not a number...")
+            print(colorama.Fore.RED + "Error: Not a number... \n")
 
 
 def category_choice():
@@ -209,10 +212,10 @@ def category_choice():
             else:
                 print(
                     colorama.Fore.RED +
-                    f"Error: {selection} is not an option..."
+                    f"Error: {selection} is not an option... \n"
                     )
         except ValueError:
-            print(colorama.Fore.RED + "Error: Not a number...")
+            print(colorama.Fore.RED + "Error: Not a number... \n")
 
 
 def difficulty_choice():
@@ -253,10 +256,10 @@ def difficulty_choice():
             else:
                 print(
                     colorama.Fore.RED +
-                    f"Error: {selection} is not an option..."
+                    f"Error: {selection} is not an option... \n"
                     )
         except ValueError:
-            print(colorama.Fore.RED + "Error: Not a number...")
+            print(colorama.Fore.RED + "Error: Not a number... \n")
 
 
 def print_hangman(wrong_guesses):
