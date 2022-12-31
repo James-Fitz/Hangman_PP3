@@ -34,3 +34,25 @@ When the game is over, the results will be displayed and the sub menu will be di
 - [**Hangman**](#hangman)
   - [**Introduction**](#introduction)
   - [**Table of Contents**](#table-of-contents)
+  - [**UX and Design**](#ux-and-design)
+
+
+
+## **UX and Design**  
+
+I wanted to ensure a very clean, easy to understand and visually appealing UX for this project.
+I implemented a simple color gradient for the background of the page to make the terminal stand out to the user.
+I also centred the terminal on the window as I feel it is more appealing for the player.
+
+The application opens to a main menu with some ASCII art displaying the Hangman title.
+The selections available to the user are colored. Play game, Rules and Credits are colored green and Quit is colored red.
+This ensures that the user knows the 0 input will end the application.
+
+Once the user enters 1 to play the game, they are given 3 option for category choice.
+Animals, Brands or Countries.
+These numbers are also colored to be more visually appealing to the user.
+
+Once the user chooses a category they are given a choice of diificulty levels.
+Easy, Intermediate or Hard.
+These numbers are color coded green, yellow and red respectively as these are universally understood colors to indicated difficulty level.
+
