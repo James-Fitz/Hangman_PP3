@@ -106,6 +106,18 @@ Add main menu image here
 
 </details>
 
+<details><summary>Rules Page</summary>     
+
+Add rules image here
+
+</details>
+
+<details><summary>Credits Page</summary>     
+
+Add Credits image here
+
+</details>
+
 <details><summary>Sub Menu</summary>  
 
 Add sub menu image here
