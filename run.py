@@ -404,14 +404,14 @@ def new_game(category, difficulty):
             if player_choice in random_word:
                 print(
                     f"Correct, {player_choice.upper()} is in the word! " +
-                    f"You have {6 - wrong_guesses} guess(es) remaining...")
+                    f"You have {7 - wrong_guesses} guess(es) remaining...")
             else:
-                print(
-                    f"Sorry, {player_choice.upper()} is not in the word... " +
-                    f"You have {6 - wrong_guesses} guess(es) remaining..."
-                    )
                 # Add 1 to the wrong_guesses variable
                 wrong_guesses += 1
+                print(
+                    f"Sorry, {player_choice.upper()} is not in the word... " +
+                    f"You have {7 - wrong_guesses} guess(es) remaining..."
+                    )
             print_hangman(wrong_guesses)
             # Adds all letters guessed by the user
             # to the guessed_letters variable.
