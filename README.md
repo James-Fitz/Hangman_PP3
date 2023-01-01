@@ -17,16 +17,18 @@ Often players will begin by guessing the vowels, A,E,I,O and U, which gives a go
 This project is a terminal based hangman game that is written completely using the Python programming language.
 User input is accepted through number or letter entries into the command line of the terminal.
 
-I decided to allow the user to choose a category of words to pick from (animals, brands or countries), and also a difficulty level to choose from (easy: 5 letter word, intermediate: 6 letter word, or hard: 7 letter word.)
+I decided to allow the user to choose a category of words to pick from (animals, brands or countries), and also a difficulty level to choose from (easy: 5 letter word, intermediate: 6 letter word, or hard: 7 letter word).
+This allows more variety and gives the user a hint at what word they will be guessing which in turn creates a more enjoyable experience.
 
-These words are stored on an external google spreadsheet which makes it very simple to add or remove words from the game at any time.
+The random words are stored on an external google spreadsheet which makes it very simple to add or remove words from the game at any time.
 
-Oncde the user begins a new game, they must input one letter at a time to guess the hidden word.
+Once the user begins a new game, they must input one letter at a time to guess the hidden word.
 If the user guesses a letter correctly, the letter will be revealed.
 If the user guesses incorrectly, a body part will be added to the hangman image and the player must guess again.
+All previously guessed letters are displayed to the user.
 The game ends when either the player guesses all the letters correctly or the hangman is fully formed and the player loses.
 
-When the game is over, the results will be displayed and the sub menu will be displayed to the user to return to the main menu or quit the game.
+When the game is over, the results will be displayed and the sub menu will be displayed for the user to return to the main menu or quit the game.
 
 <br>
 
@@ -51,43 +53,52 @@ When the game is over, the results will be displayed and the sub menu will be di
 ## **UX and Design**  
 
 I wanted to ensure a very clean, easy to understand and visually appealing UX for this project.
+As it is a terminal based project there wasn't a lot of scope for design choice.
 I implemented a simple color gradient for the background of the page to make the terminal stand out to the user.
 I also centred the terminal on the window as I feel it is more appealing for the player.
 
 The application opens to a main menu with some ASCII art displaying the Hangman title.
-The selections available to the user are colored. Play game, Rules and Credits are colored green and Quit is colored red.
+The selections available to the user are colored. "Play game", "Rules" and "Credits" are colored green and "Quit" is colored red.
 This ensures that the user knows the 0 input will end the application.
 
-Once the user enters 1 to play the game, they are given 3 option for category choice.
-Animals, Brands or Countries.
+Once the user enters 1 to play the game, they are given 3 options for category choice.
+"Animals", "Brands" or "Countries".
 These numbers are also colored to be more visually appealing to the user.
 
 Once the user chooses a category they are given a choice of diificulty levels.
-Easy, Intermediate or Hard.
-These numbers are color coded green, yellow and red respectively as these are universally understood colors to indicated difficulty level.
+"Easy", "Intermediate" or "Hard".
+These numbers are color coded green, yellow and red respectively as these are universally understood colors to indicate difficulty level.
 
 Once the user has chosen the difficulty level the game screen will be displayed.
 The category and difficulty choice will remain at the top of the page.
 Below these, there are a number underscores denoting the amount of letters in the word.
 Below the underscores, there will be an ASCII art image of a gallows, showing the player how close they are to losing.
-Below the gallows is a player input request.
+Below the gallows the players previously guessed letters are displayed and underneath this is a player input request.
 
-I have used red and green throughout this project to inform the user when an invalid/incorrect entry has been made and when a valid/correct entry has been made .
+I have used red and green throughout this project to inform the user when an invalid/incorrect entry has been made and when a valid/correct entry has been made.
 
 If a user inputs an invalid entry, an incorrect answer or loses the game, they will be given a message in red.
 
 If the user guesses a letter correctly or wins the game, they will be given a message in green.
 
+<details><summary>Target Audience</summary>
+
+- This game is suitable for all age groups.
+- This game was made for fans of simple word games.
+- Anyone that enjoys simple terminal based games.
+
+</details>
+
 <details><summary>User Experience and Expectations</summary>  
 
 - Simple game to play.
-- Clear instructions and rules.
+- Clear instructions and rules that are easy to understand.
 - Simple design and easy navigation.
-- intuative design where results and outcomes are easily identified.
-- Clear indication of input errors.
-- Ability to see progress throughout the game, how many guesses left, how many letters guessed correctly.
+- intuative design where results and outcomes are easily identified and displayed.
+- Clear indication of input errors to the user.
+- Ability to see progress throughout the game, how many guesses are left, how many letters guessed correctly, whiich letters have already been guessed.
 - Variety and choice for a new experience every time.
-- Ability to return to the main menu at the end of the game.
+- Ability to return to the main menu at the end of the game and restart the application.
 
 </details>
 
@@ -159,14 +170,23 @@ Add difficulty choice image here
 
 ### Python Linter Validation
 
+Insert linter image here
+
 ### Input Testing
 
 Insert table with all input testing,area to test, input required, expected results, outcome, pass/fail.
+
+
 
 ### Browser Tests
 
 Insert table with images of app running on multiple browsers.
 
+| Browser | Image | Result |
+| ------- | ----- | ------ |
+| Chrome | Insert image here | Working as expected |
+| Firefox | Insert image here | Working as expected |
+| Microsoft Edge | Insert image here | Working as expected |
 ### Bugs and Errors
 
 No bugs in the program
