@@ -174,8 +174,6 @@ Insert linter image here
 
 ### User Input Testing
 
-Insert table with all input testing,area to test, input required, expected results, outcome, pass/fail.
-
 | Test Area | Input To Validate | Expected Outcome | Actual Outcome | Pass/Fail |
 | --------- | ----------------- | ---------------- | -------------- | --------- |
 | Main Menu | N/A | Load main_menu function | As required | Pass |
@@ -183,16 +181,32 @@ Insert table with all input testing,area to test, input required, expected resul
 | Main Menu | Input 3 | Display credits | As required | Pass |
 | Main Menu | Input 2 | Display rules | As required | Pass |
 | Main Menu | Input 1 | Run the main game function | As required | Pass |
-| Main Menu | Input 7 | Error message - invalid choice | As required | Pass |
-| Main Menu | Input g | Error message - not a number | As required | Pass |
+| Main Menu | Input any other number | Error message - Invalid choice - loop back to request input | As required | Pass |
+| Main Menu | Input any other character | Error message - Not a number - loop back to request input | As required | Pass |
 | Credits | Input 1 | Return to main menu | As required | Pass |
 | Credits | Input 0 | Quit the application | As required | Pass |
-| Credits | Input 5 | Error message - invalid choice | As required | Pass |
-| Credits | Input f | Error message - not a number | As required | Pass |
+| Credits | Input any other number | Error message - Invalid choice - loop back to request input | As required | Pass |
+| Credits | Input any other character | Error message - Not a number - loop back to request input | As required | Pass |
 | Rules | Input 1 | Return to main menu | As required | Pass |
 | Rules | Input 0 | Quit the application | As required | Pass |
-| Rules | Input 5 | Error message - invalid choice | As required | Pass |
-| Rules | Input f | Error message - not a number | As required | Pass |
+| Rules | Input any other number | Error message - Invalid choice - loop back to request input | As required | Pass |
+| Rules | Input any other character | Error message - Not a number - loop back to request input | As required | Pass |
+| Category Choice | Input 1 | Selects "Animals" category | As required | Pass |
+| Category Choice | Input 2 | Selects "Brands" category | As required | Pass |
+| Category Choice | Input 3 | Selects "Countries" category | As required | Pass |
+| Category Choice | Input any other number | Error message - Invalid choice - loop back to request input | As required | Pass |
+| Category Choice | Input any other character | Error message - Not a number - loop back to request input | As required | Pass |
+| Difficulty Choice | Input 1 | Selects "Easy" difficulty | As required | Pass |
+| Difficulty Choice | Input 2 | Selects "Intermediate" difficulty | As required | Pass |
+| Difficulty Choice | Input 3 | Selects "Hard" difficulty | As required | Pass |
+| Difficulty Choice | Input any other number | Error message - Invalid choice - loop back to request input | As required | Pass |
+| Difficulty Choice | Input any other character | Error message - Not a number - loop back to request input | As required | Pass |
+| Main Game Screen | Input a number | Error message - Invalid choice - loop back to request input | As required | Pass |
+| Main Game Screen | Input multiple letters | Error message - One letter at a time - loop back to request input | As required | Pass |
+| Main Game Screen | Correct letter guess | Display correct letter message, add letter to guessed letters list and display correctly guessed letter in the random word | As required | Pass |
+| Main Game Screen | Guess all letters correctly | Display win message, display sub_menu to return to main menu or quit the application | As required | Pass |
+| Main Game Screen | Incorrect letter guess | Display incorrect letter message, add letter to guessed letters list, remove one from guesses remaining and add body part to hangman | As required | Pass |
+| Main Game Screen | Make 7 incorrect guesses | Display lose message, display sub_menu to return to main menu or quit the application | As required | Pass |
 
 ### Browser Tests
 
