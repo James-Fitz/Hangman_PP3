@@ -1,5 +1,5 @@
 """
-Import all neccessary functions
+Import all neccessary functions.
 """
 import random
 import os
@@ -30,7 +30,7 @@ def clear():
 
 def quit_game():
     """
-    Quit the game and print a thank you message and ascii art to the console
+    Quit the game and print a thank you message and ascii art to the console.
     """
     clear()
     print("Thanks for playing...")
@@ -154,25 +154,28 @@ def main_menu():
                 "Please select a number from the menu to continue...: \n"
                 ))
             if selection == 1:
+                # Run main game function.
                 clear()
                 run_game()
-                # clears the console and runs the main game
             elif selection == 2:
+                # Print rules for hangman to console.
                 clear()
                 rules()
-                # print rules for hangman to console
             elif selection == 3:
+                # Print thank you and credits to console.
                 clear()
                 credits_info()
-                # print thank you and credits to console
             elif selection == 0:
+                # Exit the application.
                 quit_game()
             else:
+                # Print an error message when an invalid number is entered.
                 print(
                     colorama.Fore.RED +
                     f"Error: {selection} is not an option... \n"
                     )
         except ValueError:
+            # Print an error message when anything except a number is entered.
             print(colorama.Fore.RED + "Error: Not a number... \n")
 
 
@@ -210,11 +213,13 @@ def category_choice():
                 category = "countries"
                 return category
             else:
+                # Print an error is user enters an invalid number.
                 print(
                     colorama.Fore.RED +
                     f"Error: {selection} is not an option... \n"
                     )
         except ValueError:
+            # Print an error message when anything except a number is entered.
             print(colorama.Fore.RED + "Error: Not a number... \n")
 
 
@@ -254,17 +259,20 @@ def difficulty_choice():
                 difficulty = "hard"
                 return difficulty
             else:
+                # Print an error is user enters an invalid number.
                 print(
                     colorama.Fore.RED +
                     f"Error: {selection} is not an option... \n"
                     )
         except ValueError:
+            # Print an error message when anything except a number is entered.
             print(colorama.Fore.RED + "Error: Not a number... \n")
 
 
 def print_hangman(wrong_guesses):
     """
-    Takes the value of wrong guesses and prints the relevant hangman image
+    Takes the value of wrong guesses and prints the
+    relevant hangman image to the console when called.
     """
     if wrong_guesses == 0:
         print(r"""
@@ -347,13 +355,14 @@ def print_hangman(wrong_guesses):
         |________
         """)
     else:
-        quit()
+        pass
 
 
 def run_game():
     """
-    Assign variables for category and difficulty.
+    Assign variables for category and difficulty using the relevant functions.
     Use these variables to run new_game function.
+    Print the category and difficulty level to the console.
     """
     category = category_choice()
     clear()
@@ -368,17 +377,21 @@ def new_game(category, difficulty):
     """
     Starts a new game which takes the category and difficulty
     parameters chosen by the user to generate a word from the spreadsheet.
+    Loops through the code while wrong_guesses are less than 7.
+    When wrong guesses reaches 7, player loses or if player
+    guesses the word, player wins.
     """
-    # Generate the word the player is trying to guess
+    # Generate the word the player is trying to guess for the google sheet.
     random_word = random.choice(
         SHEET.worksheet(difficulty + "_" + category)
         .get_values().pop()).upper()
-    # Print the category and difficulty level chosen by the user
+    # Assign variables for guessed letters and wrong_guesses
     guessed_letters = ""
     wrong_guesses = 0
+    # Print underscores for the letters in the random word.
     print(len(random_word) * " _ " + "\n ")
+    # Print the starting hangman image.
     print_hangman(wrong_guesses)
-    # print(f"your word is: {random_word}")
     # Create a loop that ends when the player loses. Break if player wins.
     while wrong_guesses < 7:
         print("")
@@ -386,14 +399,18 @@ def new_game(category, difficulty):
         clear()
         print(f"Category: { category.capitalize() }")
         print(f"Difficulty level: { difficulty.capitalize() } \n")
+        wrong_letters = 0
         if not player_choice.isalpha():
+            # Print message if player eneters a value that
+            # is not a letter from a-z.
             print(
                 colorama.Fore.RED +
                 f"{player_choice} is not a valid letter... " +
                 colorama.Fore.WHITE +
                 f"You have {7 - wrong_guesses} guess(es) remaining... \n")
-            wrong_letters = 0
             for letter in random_word:
+                # For loop to print out the correctly guessed letter and
+                # underscores for the remaining letters.
                 if letter in guessed_letters:
                     print(
                         f" { letter.upper() } ", end=""
@@ -403,12 +420,14 @@ def new_game(category, difficulty):
                     wrong_letters += 1
             print("")
         elif len(player_choice) != 1:
+            # Print message if player eneters more than one letter at a time.
             print(
                 colorama.Fore.RED + "Please input one letter at a time... " +
                 colorama.Fore.WHITE +
                 f"You have {7 - wrong_guesses} guess(es) remaining... \n")
-            wrong_letters = 0
             for letter in random_word:
+                # For loop to print out the correctly guessed letter and
+                # underscores for the remaining letters.
                 if letter in guessed_letters:
                     print(
                         f" { letter.upper() } ", end=""
@@ -418,13 +437,16 @@ def new_game(category, difficulty):
                     wrong_letters += 1
             print("")
         elif player_choice in guessed_letters:
+            # Print message if player eneters a letter
+            # that has been previously guessed.
             print(
                 colorama.Fore.RED +
                 f"{player_choice.upper()} has already been guessed... " +
                 colorama.Fore.WHITE +
                 f"You have {7 - wrong_guesses} guess(es) remaining... \n")
-            wrong_letters = 0
             for letter in random_word:
+                # For loop to print out the correctly guessed letter and
+                # underscores for the remaining letters.
                 if letter in guessed_letters:
                     print(
                         f" { letter.upper() } ", end=""
@@ -435,6 +457,8 @@ def new_game(category, difficulty):
             print("")
         else:
             if player_choice in random_word:
+                # Print message when players guesses a letter correctly
+                # and prints remaining guesses.
                 print(
                     colorama.Fore.GREEN +
                     f"Correct, {player_choice.upper()} is in the word! " +
@@ -443,17 +467,20 @@ def new_game(category, difficulty):
             else:
                 # Add 1 to the wrong_guesses variable
                 wrong_guesses += 1
+                # Print message when player guesses a letter incorrectly
+                # and prints remaining guesses.
                 print(
                     colorama.Fore.RED +
                     f"Sorry, {player_choice.upper()} is not in the word... " +
                     colorama.Fore.WHITE +
                     f"You have {7 - wrong_guesses} guess(es) remaining... \n"
                     )
+            guessed_letters = guessed_letters + player_choice
             # Adds all letters guessed by the user
             # to the guessed_letters variable.
-            guessed_letters = guessed_letters + player_choice
-            wrong_letters = 0
             for letter in random_word:
+                # For loop to print out the correctly guessed letter and
+                # underscores for the remaining letters.
                 if letter in guessed_letters:
                     print(
                         f" { letter.upper() } ", end=""
@@ -463,6 +490,8 @@ def new_game(category, difficulty):
                     wrong_letters += 1
             print(" ")
             if wrong_letters == 0:
+                # If player guesses all of the letters, prints
+                # a win message and breaks out of the loop.
                 print_hangman(wrong_guesses)
                 print(
                     colorama.Fore.GREEN +
@@ -470,11 +499,15 @@ def new_game(category, difficulty):
                     )
                 print(f"The word is {random_word.upper()}!\n")
                 sub_menu()
+                # Run sub_menu function to allow player to
+                # quit or return to main menu.
                 break
         print_hangman(wrong_guesses)
         print("\nPreviously guessed letters: \n")
         print(f"{list(guessed_letters.upper())}")
     else:
+        # Print message when player loses, run sub_menu
+        # function to allow user to quit or return to main menu.
         print(
             colorama.Fore.RED +
             "\nSorry, you lose... Please try again...\n")
@@ -483,3 +516,4 @@ def new_game(category, difficulty):
 
 
 main_menu()
+# Run main_menu function to start the game.
