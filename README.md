@@ -252,8 +252,8 @@ All python code was passed through the Code Institute Python Linter with no erro
 | I want to be able to view the rules for the game. | ![Rules test image](readme-images/testing-rules.png) | Y | 
 | I want to be able to see who created the game. | ![Credits menu test image](readme-images/testing-credits.png) | Y | 
 | I want to be able to choose my random word from different categories. | ![Category test image](readme-images/testing-category-choice.png) | Y | 
-| I want to be able to choose from different difficulty levels | ![Difficulty test image](readme-images/testing-difficulty-choice.png) | Y | 
-| When the game starts, I want to be able to see my category, difficulty level; and how many letters I need to guess. | ![Opening game screen test image](readme-images/testing-opening-game-screen.png) | Y |
+| I want to be able to choose from different difficulty levels. | ![Difficulty test image](readme-images/testing-difficulty-choice.png) | Y | 
+| When the game starts, I want to be able to see my category, difficulty level, and how many letters I need to guess. | ![Opening game screen test image](readme-images/testing-opening-game-screen.png) | Y |
 | If I make an invalid guess, or guess a letter that has already been guessed, I want a message to tell me why my guess was invalid, and I don't want this to affect my lives remaining. | ![Invalid letter input test image](readme-images/testing-not-a-letter.png) ![Multiple letter input test image](readme-images/testing-multiple-input.png)| Y | S
 | When I make a correct guess, I want to be shown a message that my guess was correct, I want the correct letter to appear in the random word. | ![Correct guess test image](readme-images/testing-correct-guess.png) | Y | 
 | When I make an incorrect guess, I want a message to display that my guess was incorrect and I want to know how many lives I have left. | ![Incorrect guess test image](readme-images/testing-incorrect-guess.png) | Y |
@@ -302,7 +302,7 @@ All python code was passed through the Code Institute Python Linter with no erro
 
 <details><summary>Browser Testing</summary>
 
-Insert table with images of app running on multiple browsers.
+The application was tested on multiple browers and a mobile android decvice. Results are seen below.
 
 | Browser | Image | Result |
 | ------- | ----- | ------ |
@@ -315,7 +315,7 @@ Insert table with images of app running on multiple browsers.
 
 <details><summary>Bugs and Errors</summary>
 
-No bugs were found in the program and everything is working as expected.
+There were many "line too long" errors in gitpod during development but these have all been dealt with by separating long lines of code onto multiple lines. t avoid the error.
 
 </details>
 
@@ -325,14 +325,14 @@ No bugs were found in the program and everything is working as expected.
 
 <details><summary>Programs and Languages</summary>
 
-- Python programming language
-- Github
-- Gitpod
-- Google sheets
-- Google cloud
-- Balsamiq
-- Lucidchart 
-- CI Python Linter
+- [Python programming language](https://en.wikipedia.org/wiki/Python_(programming_language)) - Used to write all of the code.
+- [Github](https://github.com/) - Used to store the code progress and history.
+- [Gitpod](https://www.gitpod.io/) - IDE used to wrtie the puthon code and push to github to document code progress.
+- [Google sheets](https://www.google.com/sheets/about/) - Used to store the random words for our game.
+- [Google cloud](https://cloud.google.com/) - Used to enable API's for the project.
+- [Balsamiq](https://balsamiq.com/) - Used to create wireframes.
+- [Lucidchart](https://www.lucidchart.com/pages/) - Used to create flowchart.
+- [CI Python Linter](https://pep8ci.herokuapp.com/) - Used to check validity of Python code ensuring PEP 8standard is met.
 
 </details>
 
