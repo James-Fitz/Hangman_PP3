@@ -349,9 +349,57 @@ There were many "line too long" errors in gitpod during development but these ha
 
 ## **Deployment**  
 
+This project was written using Gitpod IDE.
 This project was deployed using Heroku cloud based deplaoyment service.
 
+Code institute has supplied us with a [template](https://github.com/Code-Institute-Org/python-essentials-template) to display the terminal in the window. This template was used as the base for this project.
 
+<details><summary>Heroku Deployment</summary>  
+
+1. Creat an account at [Heroku](https://www.heroku.com)
+ Select *New* in the top-right corner of your Heroku Dashboard, and select *Create new app* from the dropdown menu.
+- Your app name must be unique, and then choose a region closest to you (EU or USA), and finally, select *Create App*.
+- From the new app *Settings*, click *Reveal Config Vars*, and set the value of KEY to `PORT`, and the value to `8000` then select *add*.
+- Further down, to support dependencies, select *Add Buildpack*.
+- The order of the buildpacks is important, select `Python` first, then `Node.js` second. (if they are not in this order, you can drag them to rearrange them)
+
+Heroku needs two additional files in order to deploy properly.
+- requirements.txt
+- Procfile
+
+You can install this project's requirements (where applicable) using: `pip3 install -r requirements.txt`. If you have your own packages that have been installed, then the requirements file needs updated using: `pip3 freeze --local > requirements.txt`
+
+The Procfile can be created with the following command: `echo web: node index.js > Procfile`
+
+For Heroku deployment, follow these steps to connect your GitHub repository to the newly created app:
+
+- In the Terminal/CLI, connect to Heroku using this command: `heroku login -i`
+- Set the remote for Heroku: `heroku git:remote -a <app_name>` (replace app_name with your app, without the angle-brackets)
+- After performing the standard Git `add`, `commit`, and `push` to GitHub, you can now type: `git push heroku main`
+
+The frontend terminal should now be connected and deployed to Heroku.
+
+</details>
+
+<details><summary>How to Clone in GitHub</summary>  
+
+1. Navigate to the required repository on GitHub.  
+2. Click the "Code" button, located below the nav bar and above the file list.  
+3. Select either "HTTPS", "SSH" or "Github CLI" and click the copy button.  
+4. Open Git Bash.  
+5. Change the location of your cloned repository.  
+6. Type <code>git clone</code> and then paste the URL you copied.  
+7. Press “Enter” to create your clone.  
+
+</details>  
+
+<details><summary>How to Fork in Github</summary>  
+
+1. Navigate to the required repository on GitHub.
+2. Click "Fork" on the top right hand corner of the page.
+3. Click "Create Fork" at the bottom of the page.
+
+</details>  
 
 ## **Credits**  
 
