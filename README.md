@@ -40,7 +40,7 @@ When the game is over, the results will be displayed and the sub menu will be di
   - [**Features**](#features)
   - [**Testing**](#testing)
     - [Python Linter Validation](#python-linter-validation)
-    - [Input Testing](#input-testing)
+    - [User Input Testing](#user-input-testing)
     - [Browser Tests](#browser-tests)
     - [Bugs and Errors](#bugs-and-errors)
   - [**Technology Used**](#technology-used)
@@ -172,11 +172,27 @@ Add difficulty choice image here
 
 Insert linter image here
 
-### Input Testing
+### User Input Testing
 
 Insert table with all input testing,area to test, input required, expected results, outcome, pass/fail.
 
-
+| Test Area | Input To Validate | Expected Outcome | Actual Outcome | Pass/Fail |
+| --------- | ----------------- | ---------------- | -------------- | --------- |
+| Main Menu | N/A | Load main_menu function | As required | Pass |
+| Main Menu | Input 0 | Quit the application | As required | Pass |
+| Main Menu | Input 3 | Display credits | As required | Pass |
+| Main Menu | Input 2 | Display rules | As required | Pass |
+| Main Menu | Input 1 | Run the main game function | As required | Pass |
+| Main Menu | Input 7 | Error message - invalid choice | As required | Pass |
+| Main Menu | Input g | Error message - not a number | As required | Pass |
+| Credits | Input 1 | Return to main menu | As required | Pass |
+| Credits | Input 0 | Quit the application | As required | Pass |
+| Credits | Input 5 | Error message - invalid choice | As required | Pass |
+| Credits | Input f | Error message - not a number | As required | Pass |
+| Rules | Input 1 | Return to main menu | As required | Pass |
+| Rules | Input 0 | Quit the application | As required | Pass |
+| Rules | Input 5 | Error message - invalid choice | As required | Pass |
+| Rules | Input f | Error message - not a number | As required | Pass |
 
 ### Browser Tests
 
@@ -187,9 +203,10 @@ Insert table with images of app running on multiple browsers.
 | Chrome | Insert image here | Working as expected |
 | Firefox | Insert image here | Working as expected |
 | Microsoft Edge | Insert image here | Working as expected |
+
 ### Bugs and Errors
 
-No bugs in the program
+No bugs were found in the program and everything is working as expected.
 
 ## **Technology Used**  
 
