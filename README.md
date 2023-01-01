@@ -11,7 +11,7 @@
 ## **Introduction**
 
 Hangman is a simple word game that requires the player to guess the missing letters in an unknown word where the length of the word is known.
-The strategy most commonly implemented while playing the game of hangman is to guess the most commomnly seen letters in the English language first and try to work out the answer from there.
+The strategy most commonly implemented while playing the game of hangman is to guess the most commonly seen letters in the English language first and try to work out the answer from there.
 Often players will begin by guessing the vowels, A,E,I,O and U, which gives a good starting point to discovering the word.
 
 This project is a terminal based hangman game that is written completely using the Python programming language.
@@ -110,7 +110,7 @@ There are some optional additions on the flowchart that I ultimately did decide 
 <details><summary>Wireframe</summary>  
 
 I had a simple wireframe design for this project with a main menu, rules section, credits section and main game screen.
-The end design is very similar to the wirefram with a few small differences.
+The end design is very similar to the wireframe with only a few small differences.
 
 - Main Menu
 
@@ -247,18 +247,18 @@ All python code was passed through the Code Institute Python Linter with no erro
 
 | User requirement | Image | Requirement met? Y/N | 
 | ---------------- | ----- | -------------------- |
-| I want to be shown a clear main menu when the application is loaded | ![Main menu test image](readme-images/testing-main-menu.png) | Y |
-| I want to be shown an error message that clearly states why the error has occurred if I make an incorrect input | ![Input error not a number image](readme-images/testing-input-error-not-number.png) ![Input error not an option image](readme-images/testing-input-error-not-option.png) | Y | 
-| I want to be able to view the rules for the game | ![Rules test image](readme-images/testing-rules.png) | Y | 
-| I want to be able to see who created the game | ![Credits menu test image](readme-images/testing-credits.png) | Y | 
-| I want to be able to choose my random word from different categories | ![Category test image](readme-images/testing-category-choice.png) | Y | 
+| I want to be shown a clear main menu when the application is loaded. | ![Main menu test image](readme-images/testing-main-menu.png) | Y |
+| I want to be shown an error message that clearly states why the error has occurred if I make an incorrect input. | ![Input error not a number image](readme-images/testing-input-error-not-number.png) ![Input error not an option image](readme-images/testing-input-error-not-option.png) | Y | 
+| I want to be able to view the rules for the game. | ![Rules test image](readme-images/testing-rules.png) | Y | 
+| I want to be able to see who created the game. | ![Credits menu test image](readme-images/testing-credits.png) | Y | 
+| I want to be able to choose my random word from different categories. | ![Category test image](readme-images/testing-category-choice.png) | Y | 
 | I want to be able to choose from different difficulty levels | ![Difficulty test image](readme-images/testing-difficulty-choice.png) | Y | 
-| When the game starts, I want to be able to see my category, difficulty level; and how many letters I need to guess | ![Opening game screen test image](readme-images/testing-opening-game-screen.png) | Y |
-| If I make an invalid guess, or guess a letter that has already been guessed, I want a message to tell me why my guess was invalid, and I don't want this to affect my lives remaining | ![Invalid letter input test image](readme-images/testing-not-a-letter.png) ![Multiple letter input test image](readme-images/testing-multiple-input.png)| Y | S
-| When I make a correct guess, I want to be shown a message that my guess was correct, I want the correct letter to appear in the random word | ![Correct guess test image](readme-images/testing-correct-guess.png) | Y | 
-| When I make an incorrect guess, I want a message to display that my guess was incorrect and I want to know how many lives I have left | ![Incorrect guess test image](readme-images/testing-incorrect-guess.png) | Y |
-| When I win, I want to be shown a message that I won and I want the option to quit or play again | ![Win screen test image](readme-images/testing-win-screen.png) | Y | 
-| When I lose, I want to be told what the word was and I want the option to quit or play again | ![Lose screen test image](readme-images/testing-lose-screen.png) | Y |
+| When the game starts, I want to be able to see my category, difficulty level; and how many letters I need to guess. | ![Opening game screen test image](readme-images/testing-opening-game-screen.png) | Y |
+| If I make an invalid guess, or guess a letter that has already been guessed, I want a message to tell me why my guess was invalid, and I don't want this to affect my lives remaining. | ![Invalid letter input test image](readme-images/testing-not-a-letter.png) ![Multiple letter input test image](readme-images/testing-multiple-input.png)| Y | S
+| When I make a correct guess, I want to be shown a message that my guess was correct, I want the correct letter to appear in the random word. | ![Correct guess test image](readme-images/testing-correct-guess.png) | Y | 
+| When I make an incorrect guess, I want a message to display that my guess was incorrect and I want to know how many lives I have left. | ![Incorrect guess test image](readme-images/testing-incorrect-guess.png) | Y |
+| When I win, I want to be shown a message that I won and I want the option to quit or play again. | ![Win screen test image](readme-images/testing-win-screen.png) | Y | 
+| When I lose, I want to be told what the word was and I want the option to quit or play again. | ![Lose screen test image](readme-images/testing-lose-screen.png) | Y |
 
 </details>
 
