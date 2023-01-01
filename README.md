@@ -1,6 +1,6 @@
 # **Hangman**
 
-inser Am I Responsive Image here
+![Am I responsive image](readme-images/am-i-responsive.png)
 
 <br>
 
@@ -39,10 +39,6 @@ When the game is over, the results will be displayed and the sub menu will be di
   - [**UX and Design**](#ux-and-design)
   - [**Features**](#features)
   - [**Testing**](#testing)
-    - [Python Linter Validation](#python-linter-validation)
-    - [User Experience Testing](#user-experience-testing)
-    - [User Input Testing](#user-input-testing)
-    - [Browser Tests](#browser-tests)
     - [Bugs and Errors](#bugs-and-errors)
   - [**Technology Used**](#technology-used)
     - [Imports](#imports)
@@ -86,7 +82,7 @@ If the user guesses a letter correctly or wins the game, they will be given a me
 
 - This game is suitable for all age groups.
 - This game was made for fans of simple word games.
-- Anyone that enjoys simple terminal based games.
+- This game is for anyone that enjoys simple terminal based games.
 
 </details>
 
@@ -97,7 +93,7 @@ If the user guesses a letter correctly or wins the game, they will be given a me
 - Simple design and easy navigation.
 - intuative design where results and outcomes are easily identified and displayed.
 - Clear indication of input errors to the user.
-- Ability to see progress throughout the game, how many guesses are left, how many letters guessed correctly, whiich letters have already been guessed.
+- Ability to see progress throughout the game, how many guesses are left, how many letters guessed correctly, which letters have already been guessed.
 - Variety and choice for a new experience every time.
 - Ability to return to the main menu at the end of the game and restart the application.
 
@@ -105,13 +101,54 @@ If the user guesses a letter correctly or wins the game, they will be given a me
 
 <details><summary>Flow Chart</summary>  
 
-Insert flowchart here
+I created the flowchart before starting to write the code to give myself a good understanding and idea of what I wanted to achieve.
+It was useful knowing where the input errors could occur and what to do if that happened.
+There are some optional additions on the flowchart that I ultimately did decide to implement into the project.
+
+![Flowchart image](readme-images/hangman-flowchart.webp)
 
 </details>
 
 <details><summary>Wireframe</summary>  
 
-Insert wireframe here
+I had a simple wireframe design for this project with a main menu, rules section, credits section and main game screen.
+The end design is very similar to the wirefram with a few small differences.
+
+- Main Menu
+
+![Main menu image](readme-images/wireframe-main-menu.webp)
+
+- Rules Screen
+
+![Rules screen image](readme-images/wireframe-rules-page.webp)
+
+- Credits Screen
+
+![Credits screen image](readme-images/wireframe-credits-page.webp)
+
+- Category Choice
+
+![Category choice image](readme-images/wireframe-category-choice.webp)
+
+- Difficulty Choice 
+
+![Difficulty choice image](readme-images/wireframe-difficulty-choice.webp)
+
+- Game Screen 
+
+![Game screen image](readme-images/wireframe-game-screen.webp)
+
+- Correct Guess
+
+![Correct guess image](readme-images/wireframe-correct-guess.webp)
+
+- Error Guess
+
+![Error guess image](readme-images/wireframe-error-guess.webp)
+
+- Win Screen 
+
+![Win screen image](readme-images/wireframe-win-message.webp)
 
 </details>
 
@@ -119,6 +156,8 @@ Insert wireframe here
 
 As this is a terminal based project, there wasn't much scope for color modifications.
 I added color to the terminal using colorama, and I added a simple red to cyan gradient background to the body of the page using css.
+
+![Color palette image](readme-images/color-palette.png)
 
 </details>
 
@@ -169,11 +208,15 @@ Add difficulty choice image here
 
 ## **Testing**  
 
-### Python Linter Validation
+<details><summary>Python Linter Test Results</summary>  
 
-Insert linter image here
+All python code was passed through the Code Institute Python Linter with no errors.
 
-### User Experience Testing ###
+![Python linter results image](readme-images/ci-python-linter-results.png)
+
+</details>
+
+<details><summary>User Experience Testing</summary>
 
 | User requirement | Image | Requirement met? Y/N | 
 | ---------------- | ----- | -------------------- |
@@ -190,7 +233,9 @@ Insert linter image here
 | When I win, I want to be shown a message that I won and I want the option to quit or play again | Image | Y | 
 | When I lose, I want to be told what the word was and I want the option to quit or play again | image | Y |
 
-### User Input Testing
+</details>
+
+<details><summary>User Input Testing</summary>
 
 | Test Area | Input To Validate | Expected Outcome | Actual Outcome | Pass/Fail |
 | --------- | ----------------- | ---------------- | -------------- | --------- |
@@ -226,7 +271,9 @@ Insert linter image here
 | Main Game Screen | Incorrect letter guess | Display incorrect letter message, add letter to guessed letters list, remove one from guesses remaining and add body part to hangman | As required | Pass |
 | Main Game Screen | Make 7 incorrect guesses | Display lose message, display sub_menu to return to main menu or quit the application | As required | Pass |
 
-### Browser Tests
+</details>
+
+<details><summary>Browser Testing</summary>
 
 Insert table with images of app running on multiple browsers.
 
@@ -249,7 +296,8 @@ No bugs were found in the program and everything is working as expected.
 - Google cloud
 - Balsamiq
 - Lucidchart 
-  
+- CI Python Linter
+
 ### Imports
 
 - random - Allow a random word to be chosen.
