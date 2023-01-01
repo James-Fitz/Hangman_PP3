@@ -10,7 +10,7 @@
 
 ## **Introduction**
 
-Hangman is a simple word game that requires the player to guess the missing letters in an unknown word where the length of the word is known.
+[Hangman](https://en.wikipedia.org/wiki/Hangman_(game)) is a simple word game that requires the player to guess the missing letters in an unknown word where the length of the word is known.
 The strategy most commonly implemented while playing the game of hangman is to guess the most commonly seen letters in the English language first and try to work out the answer from there.
 Often players will begin by guessing the vowels, A,E,I,O and U, which gives a good starting point to discovering the word.
 
@@ -350,6 +350,8 @@ There were many "line too long" errors in gitpod during development but these ha
 ## **Deployment**  
 
 This project was deployed using Heroku cloud based deplaoyment service.
+
+
 
 ## **Credits**  
 
