@@ -40,6 +40,7 @@ When the game is over, the results will be displayed and the sub menu will be di
   - [**Features**](#features)
   - [**Testing**](#testing)
     - [Python Linter Validation](#python-linter-validation)
+    - [User Experience Testing](#user-experience-testing)
     - [User Input Testing](#user-input-testing)
     - [Browser Tests](#browser-tests)
     - [Bugs and Errors](#bugs-and-errors)
@@ -171,6 +172,23 @@ Add difficulty choice image here
 ### Python Linter Validation
 
 Insert linter image here
+
+### User Experience Testing ###
+
+| User requirement | Image | Requirement met? Y/N | 
+| ---------------- | ----- | -------------------- |
+| I want to be shown a clear main menu when the application is loaded | image here | Y |
+| I want to be shown an error message that clearly states why the error has occurred if I make an incorrect input | Inser image here | Y | 
+| I want to be able to view the rules for the game | Insert image | Y | 
+| I want to be able to see who created the game | Insert image | Y | 
+| I want to be able to choose my random word from different categories | Inser image | Y | 
+| I want to be able to choose from different difficulty levels | Insert image | Y | 
+| When the game starts, I want to be able to see my category, difficulty level; and how many letters I need to guess | image | Y |
+| If I make an invalid guess, or guess a letter that has already been guessed, I want a message to tell me why my guess was invalid, and I don't want this to affect my lives remaining | image | Y | S
+| When I make a correct guess, I want to be shown a message that my guess was correct, I want the correct letter to appear in the random word | Insert image | Y | 
+| When I make an incorrect guess, I want a message to display that my guess was incorrect and I want to know how many lives I have left | image | Y |
+| When I win, I want to be shown a message that I won and I want the option to quit or play again | Image | Y | 
+| When I lose, I want to be told what the word was and I want the option to quit or play again | image | Y |
 
 ### User Input Testing
 
