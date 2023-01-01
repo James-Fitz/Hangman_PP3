@@ -39,7 +39,6 @@ When the game is over, the results will be displayed and the sub menu will be di
   - [**UX and Design**](#ux-and-design)
   - [**Features**](#features)
   - [**Testing**](#testing)
-    - [Bugs and Errors](#bugs-and-errors)
   - [**Technology Used**](#technology-used)
     - [Imports](#imports)
   - [**Deployment**](#deployment)
@@ -279,13 +278,18 @@ Insert table with images of app running on multiple browsers.
 
 | Browser | Image | Result |
 | ------- | ----- | ------ |
-| Chrome | Insert image here | Working as expected |
-| Firefox | Insert image here | Working as expected |
-| Microsoft Edge | Insert image here | Working as expected |
+| Chrome | ![Chrome test results image](readme-images/chrome-test.png) | Working as expected |
+| Firefox | ![Firefox test results image](readme-images/firefox-test.png) | Working as expected |
+| Microsoft Edge | ![Microsoft edge test results image](readme-images/microsoft-edge-test.png) | Working as expected |
+| Microsoft Edge | ![Android test results image](readme-images/android-test.jpg) | Working as expected |
 
-### Bugs and Errors
+</details>
+
+<details><summary>Bugs and Errors</summary>
 
 No bugs were found in the program and everything is working as expected.
+
+</details>
 
 ## **Technology Used**  
 
