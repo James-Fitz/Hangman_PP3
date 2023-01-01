@@ -356,12 +356,12 @@ Code institute has supplied us with a [template](https://github.com/Code-Institu
 
 <details><summary>Heroku Deployment</summary>  
 
-1. Creat an account at [Heroku](https://www.heroku.com)
- Select *New* in the top-right corner of your Heroku Dashboard, and select *Create new app* from the dropdown menu.
-- Your app name must be unique, and then choose a region closest to you (EU or USA), and finally, select *Create App*.
-- From the new app *Settings*, click *Reveal Config Vars*, and set the value of KEY to `PORT`, and the value to `8000` then select *add*.
-- Further down, to support dependencies, select *Add Buildpack*.
-- The order of the buildpacks is important, select `Python` first, then `Node.js` second. (if they are not in this order, you can drag them to rearrange them)
+1. Creat an account at [Heroku](https://www.heroku.com).
+2. Select *New* in the top-right corner of your Heroku Dashboard, and select *Create new app* from the dropdown menu.
+3. Your app name must be unique, and then choose a region closest to you (EU or USA), and finally, select *Create App*.
+4. From the new app *Settings*, click *Reveal Config Vars*, and set the value of KEY to `PORT`, and the value to `8000` then select *add*.
+5. Further down, to support dependencies, select *Add Buildpack*.
+6. The order of the buildpacks is important, select `Python` first, then `Node.js` second. (if they are not in this order, you can drag them to rearrange them)
 
 Heroku needs two additional files in order to deploy properly.
 - requirements.txt
