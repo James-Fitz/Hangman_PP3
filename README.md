@@ -327,7 +327,7 @@ There were many "line too long" errors in gitpod during development but these ha
 
 - [Python programming language](https://en.wikipedia.org/wiki/Python_(programming_language)) - Used to write all of the code.
 - [Github](https://github.com/) - Used to store the code progress and history.
-- [Gitpod](https://www.gitpod.io/) - IDE used to wrtie the puthon code and push to github to document code progress.
+- [Gitpod](https://www.gitpod.io/) - IDE used to write the python code, validate and push to github to document code progress.
 - [Google sheets](https://www.google.com/sheets/about/) - Used to store the random words for our game.
 - [Google cloud](https://cloud.google.com/) - Used to enable API's for the project.
 - [Balsamiq](https://balsamiq.com/) - Used to create wireframes.
@@ -345,24 +345,28 @@ There were many "line too long" errors in gitpod during development but these ha
 
 </details>
 
+<br>
+
 ## **Deployment**  
+
+This project was deployed using Heroku cloud based deplaoyment service.
 
 ## **Credits**  
 
 <details><summary>Media</summary>  
 
-Add ascii links here
-Flowchart made using lucidchart
-Wireframes made using Balsamiq
+- [Patorjk.com](https://patorjk.com/software/taag/#p=display&h=0&v=0&f=AMC%20Razor&t=Hangman) - Used to create ASCII art.
+- [Lucidchart](https://www.lucidchart.com/pages/) - Used to create flowchart.
+- [Balsamiq](https://balsamiq.com/) - Used to create wireframes.
 
 </details>  
 
 <details><summary>Code</summary>  
 
-- Colorama tutorial
-- Code institute tutors
-- Fellow students in the CI Slack community
-- Stack overflow
-- Mentor Chris Quinn
+- [Colorama tutorial](https://www.youtube.com/watch?v=bg-quTTOeH4&ab_channel=TechNotebook) - Used to learn how to implement colorama into code.
+- Code institute tutors.
+- Fellow students in the CI Slack community and members of my study group.
+- Stack overflow community advice on loops.
+- Thanks to mentor Chris Quinn as always for the great ideas and advice.
 
 </details>  
