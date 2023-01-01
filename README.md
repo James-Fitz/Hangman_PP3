@@ -40,7 +40,6 @@ When the game is over, the results will be displayed and the sub menu will be di
   - [**Features**](#features)
   - [**Testing**](#testing)
   - [**Technology Used**](#technology-used)
-    - [Imports](#imports)
   - [**Deployment**](#deployment)
   - [**Credits**](#credits)
 
@@ -165,37 +164,62 @@ I added color to the terminal using colorama, and I added a simple red to cyan g
 ## **Features** 
 <details><summary>Main Menu</summary>     
 
-Add main menu image here
+I decided to implement a main menu in this project to allow the user to navigate to different sections of the application with ease.
+The hangman ASCII art was used to make the menu screen more appealing to the player.
+The main menu contains 4 options, "Play Game" will run the main game function, "Rules" will display the rules for the game and a sub menu to return to the main menu, "Credits will display the credits for the game and a sub menu to return to the main menu, and "Quit" will exit the application and display a goodbye message.
+
+![Main menu image](readme-images/testing-main-menu.png)
 
 </details>
 
 <details><summary>Rules Page</summary>     
 
-Add rules image here
+The rules section is used to instruct the user on the rules of this hangman game. This section contains a sub menu to return to the main menu or quit the application.
+I chose to keep this section simple with only the rules heading being colored as I wanted it to be easily read and understood by the player.
+
+![Rules menu image](readme-images/testing-rules.png)
 
 </details>
 
 <details><summary>Credits Page</summary>     
 
-Add Credits image here
+The credits section allows the user to see information about the creator of the game, links to the github repository, linkdin page and a thank you section.
+The colorscheme and dusign was kept the dame as the rules section.
+
+![Credits menu image](readme-images/testing-credits.png)
 
 </details>
 
 <details><summary>Sub Menu</summary>  
 
-Add sub menu image here
+The Sub menu is displayed at the end of the credits, rules and when the game is over.
+This allows the user to easily navigate back to the main menu.
+
+![Sub menu image](readme-images/sub-menu.png)
 
 </details>
 
 <details><summary>Category Choice</summary>
 
-Add category choice image here
+The category choice is displayed when the user starts a new game. This allows the user to customise their game an have a unique experience during every playthrough.
+
+![Category choice image](readme-images/testing-category-choice.png)
 
 </details>
 
 <details><summary>Difficulty Choice</summary>
 
-Add difficulty choice image here
+The difficulty choice is diplayed once the category has been selected. This will allow the user to challege themselves to more difficult words on subsequent playthroughs.
+
+![Difficulty choice image](readme-images/testing-difficulty-choice.png)
+
+</details>
+
+<details><summary>Quit Screen</summary>
+
+Once the player chooses the "Quit" option on either the main menu or sub menu, they are greeted with the following message and ASCII art.
+
+![Quit screen image](readme-images/testing-main-menu-quit.png)
 
 </details>
 
@@ -295,7 +319,11 @@ No bugs were found in the program and everything is working as expected.
 
 </details>
 
+<br>
+
 ## **Technology Used**  
+
+<details><summary>Programs and Languages</summary>
 
 - Python programming language
 - Github
@@ -306,12 +334,16 @@ No bugs were found in the program and everything is working as expected.
 - Lucidchart 
 - CI Python Linter
 
-### Imports
+</details>
+
+<details><summary>Imports</summary>
 
 - random - Allow a random word to be chosen.
 - os - Allow clear function to clear terminal.
 - gspread - Allow program to link with google sheets.
 - colorama - Allow terminal print messages to be colored.
+
+</details>
 
 ## **Deployment**  
 
