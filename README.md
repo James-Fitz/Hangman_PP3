@@ -339,6 +339,7 @@ The following programs were used to successfully create this application and REA
 - [Python programming language](https://en.wikipedia.org/wiki/Python_(programming_language)) - Used to write all of the code.
 - [Github](https://github.com/) - Used to store the code progress and history.
 - [Gitpod](https://www.gitpod.io/) - IDE used to write the python code, validate and push to github to document code progress.
+- [Heroku](https://www.heroku.com/) - Used for app deployment.
 - [Google sheets](https://www.google.com/sheets/about/) - Used to store the random words for our game.
 - [Google cloud](https://cloud.google.com/) - Used to enable API's for the project.
 - [Balsamiq](https://balsamiq.com/) - Used to create wireframes.
