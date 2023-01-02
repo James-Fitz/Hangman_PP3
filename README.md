@@ -361,34 +361,23 @@ The following programs were used to successfully create this application and REA
 ## **Deployment**  
 
 This project was written using Gitpod IDE.
-This project was deployed using Heroku cloud based deplaoyment service.
+This project was deployed using Heroku cloud based deployment service.
 
 Code institute has supplied us with a [template](https://github.com/Code-Institute-Org/python-essentials-template) to display the terminal in the window. This template was used as the base for this project.
 
 <details><summary>Heroku Deployment</summary>  
 
-1. Creat an account at [Heroku](https://www.heroku.com).
-2. Select *New* in the top-right corner of your Heroku Dashboard, and select *Create new app* from the dropdown menu.
-3. Your app name must be unique, and then choose a region closest to you (EU or USA), and finally, select *Create App*.
-4. From the new app *Settings*, click *Reveal Config Vars*, and set the value of KEY to `PORT`, and the value to `8000` then select *add*.
-5. Further down, to support dependencies, select *Add Buildpack*.
-6. The order of the buildpacks is important, select `Python` first, then `Node.js` second. (if they are not in this order, you can drag them to rearrange them)
-
-Heroku needs two additional files in order to deploy properly.
-- requirements.txt
-- Procfile
-
-You can install this project's requirements (where applicable) using: `pip3 install -r requirements.txt`. If you have your own packages that have been installed, then the requirements file needs updated using: `pip3 freeze --local > requirements.txt`
-
-The Procfile can be created with the following command: `echo web: node index.js > Procfile`
-
-For Heroku deployment, follow these steps to connect your GitHub repository to the newly created app:
-
-- In the Terminal/CLI, connect to Heroku using this command: `heroku login -i`
-- Set the remote for Heroku: `heroku git:remote -a <app_name>` (replace app_name with your app, without the angle-brackets)
-- After performing the standard Git `add`, `commit`, and `push` to GitHub, you can now type: `git push heroku main`
-
-The frontend terminal should now be connected and deployed to Heroku.
+1. Ensure you have updated your requirements.txt file in gitpod. to do this, enter the following code into the gitpod terminal: <code>pip3 freeze --local > requirements.txt</code>
+2. Creat an account at [Heroku](https://www.heroku.com). 
+3. From the Heroku dashboard, click "New" in the top-right corner of the screen and select "Create new app" from the menu.
+4. Enter your app name (You must have a unique app name for each new project in Heroku), choose your region, and then select "Create App".
+5. From the new app click "Settings", then click "Reveal Config Vars", and set the KEY value to PORT, and the VALUE to 8000 then click "Add".
+6. For Heroku to have access to our <file>creds.json</file> file, we need to add KEY value of CREDS and VALUE of our entire <file>creds.json</file> file, copied and pasted. Then click "Add"
+7. Underneath the config vars, select "Add Buildpack".
+8. Ensure you select "Python" first, then "Node.js" second. Make sure they are selected in this order, if not, you can click and drag to rearrange.
+9.  Now we need to connect our Github repository to our app. Navigate to the "Deploy" section at the application navigation bar and select Github.
+10. Enter the github repository name in the searchbar and click search, then click connect.
+11. If you select automatic deploys, Heroku will redeploy your app after every push to github, otherwise, you can manually deploy your app whenever you want.
 
 </details>
 
