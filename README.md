@@ -162,6 +162,9 @@ I added color to the terminal using colorama, and I added a simple red to cyan g
 <br>
 
 ## **Features** 
+
+The following features were implemented in this project.
+
 <details><summary>Main Menu</summary>     
 
 I decided to implement a main menu in this project to allow the user to navigate to different sections of the application with ease.
@@ -201,7 +204,7 @@ This allows the user to easily navigate back to the main menu.
 
 <details><summary>Category Choice</summary>
 
-The category choice is displayed when the user starts a new game. This allows the user to customise their game an have a unique experience during every playthrough.
+The category choice is displayed when the user starts a new game. This allows the user to customise their game and have a unique experience during every playthrough.
 
 ![Category choice image](readme-images/testing-category-choice.png)
 
@@ -234,6 +237,8 @@ Once the player chooses the "Quit" option on either the main menu or sub menu, t
 <br>
 
 ## **Testing**  
+
+Extensive testing was performed to ensure the code was working as intended and application was running successfully on multiple browsers.
 
 <details><summary>Python Linter Test Results</summary>  
 
@@ -302,26 +307,32 @@ All python code was passed through the Code Institute Python Linter with no erro
 
 <details><summary>Browser Testing</summary>
 
-The application was tested on multiple browers and a mobile android decvice. Results are seen below.
+The application was tested on multiple browers and a mobile android device. Results are seen below.
 
 | Browser | Image | Result |
 | ------- | ----- | ------ |
 | Chrome | ![Chrome test results image](readme-images/chrome-test.png) | Working as expected |
 | Firefox | ![Firefox test results image](readme-images/firefox-test.png) | Working as expected |
 | Microsoft Edge | ![Microsoft edge test results image](readme-images/microsoft-edge-test.png) | Working as expected |
-| Microsoft Edge | ![Android test results image](readme-images/android-test.jpg) | Working as expected |
+| Android Mobile | ![Android test results image](readme-images/android-test.jpg) | Working as expected |
 
 </details>
 
 <details><summary>Bugs and Errors</summary>
 
-There were many "line too long" errors in gitpod during development but these have all been dealt with by separating long lines of code onto multiple lines. t avoid the error.
+There were many "line too long" errors in gitpod during development but these have all been dealt with by separating long lines of code onto multiple lines to avoid the error.
+
+There was an error where wrong guesses were not being updated correctly, they would not decrease when an incorrect guess was made. They would only decrease after the next guess was made agter an incorrect guess. This was dealt with by moving the <code>wrong_guesses += 1</code> to the beginning of the else statement to ensure it was incremented before being printed to the console.
+
+There was an error with colorama not working correctly with Horoku, this was solved when the requirements.txt file was updated in gitpod.
 
 </details>
 
 <br>
 
 ## **Technology Used**  
+
+The following programs were used to successfully create this application and README file.
 
 <details><summary>Programs and Languages</summary>
 
@@ -400,6 +411,8 @@ The frontend terminal should now be connected and deployed to Heroku.
 3. Click "Create Fork" at the bottom of the page.
 
 </details>  
+
+<br>
 
 ## **Credits**  
 
