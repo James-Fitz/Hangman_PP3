@@ -416,8 +416,8 @@ Code institute has supplied us with a [template](https://github.com/Code-Institu
 
 <details><summary>Code</summary>  
 
+- Code Institute "Love Sandwiches" walkthrough project was used to link with Google sheets and for Heroku deployment.
 - [Colorama tutorial](https://www.youtube.com/watch?v=bg-quTTOeH4&ab_channel=TechNotebook) - Used to learn how to implement colorama into code.
-- Code institute tutors.
 - Fellow students in the CI Slack community and members of my study group.
 - Stack overflow community advice on loops.
 - Thanks to mentor Chris Quinn as always for the great ideas and advice.
